@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border">
+      <header className="bg-card shadow-sm border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
@@ -36,7 +36,7 @@ function App() {
       </header>
 
       {/* Navigation */}
-      <nav className="bg-card border-b border-border sticky top-0 z-10 shadow-sm">
+      <nav className="bg-card border-b border-border sticky top-[72px] z-40 shadow-sm backdrop-blur-sm bg-card/95">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex space-x-1 overflow-x-auto">
             {tabs.map((tab) => (
