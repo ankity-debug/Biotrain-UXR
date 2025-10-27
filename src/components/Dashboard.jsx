@@ -85,7 +85,7 @@ const Dashboard = () => {
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-3xl font-bold text-foreground">Dashboard Overview</h2>
-          <p className="text-muted-foreground mt-2">Real user interview insights from 4 participants</p>
+          <p className="text-muted-foreground mt-2">Real user interview insights from {analyticsData.totalParticipants} participants</p>
         </div>
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           <Activity className="w-4 h-4" />
@@ -98,7 +98,7 @@ const Dashboard = () => {
         <AlertCircle className="h-4 w-4" />
         <AlertTitle>Critical Finding</AlertTitle>
         <AlertDescription>
-          <strong>100% of participants (4/4)</strong> struggle with nutrition tracking - the #1 pain point across all user types
+          <strong>83% of participants (5/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
         </AlertDescription>
       </Alert>
 
@@ -123,7 +123,7 @@ const Dashboard = () => {
           <CardContent>
             <div className="text-2xl font-bold">{Object.keys(analyticsData.userTypes).length}</div>
             <p className="text-xs text-muted-foreground">
-              {analyticsData.userTypes.Advanced} Advanced, {analyticsData.userTypes.Intermediate} Intermediate
+              {analyticsData.userTypes.Advanced || 0} Advanced, {analyticsData.userTypes.Intermediate || 0} Intermediate, {analyticsData.userTypes['Power User'] || 0} Power
             </p>
           </CardContent>
         </Card>
@@ -408,7 +408,7 @@ const Dashboard = () => {
         <CheckCircle2 className="h-4 w-4" />
         <AlertTitle>Dashboard Updated</AlertTitle>
         <AlertDescription>
-          All data now reflects real interviews from 4 participants: Amish, Aniket, Majid, and Jessica.
+          All data now reflects real interviews from {analyticsData.totalParticipants} participants: Amish, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, and Dhruv.
         </AlertDescription>
       </Alert>
     </div>
