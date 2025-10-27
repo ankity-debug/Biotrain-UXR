@@ -9,10 +9,10 @@ import { keyInsights, painPointAnalysis, opportunityAnalysis, userPersonas } fro
 const Insights = () => {
   const getPriorityVariant = (priority) => {
     switch (priority?.toLowerCase()) {
-      case 'critical': return 'destructive'
-      case 'high': return 'destructive'
-      case 'medium': return 'default'
-      case 'low': return 'secondary'
+      case 'critical': return 'critical'
+      case 'high': return 'high'
+      case 'medium': return 'medium'
+      case 'low': return 'low'
       default: return 'outline'
     }
   }
@@ -31,8 +31,8 @@ const Insights = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Research Insights</h2>
-          <p className="text-gray-600 mt-2">Key findings and actionable insights from 4 user interviews</p>
+          <h2 className="text-3xl font-bold text-foreground">Research Insights</h2>
+          <p className="text-muted-foreground mt-2">Key findings and actionable insights from 4 user interviews</p>
         </div>
         <div className="flex items-center space-x-2">
           <Badge variant="outline" className="text-sm">
@@ -53,7 +53,7 @@ const Insights = () => {
 
         {/* Key Insights Tab */}
         <TabsContent value="insights" className="space-y-4 mt-6">
-          <Card>
+          <Card className="shadow-sm hover:shadow-md transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Star className="h-5 w-5 text-yellow-500" />

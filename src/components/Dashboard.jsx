@@ -57,26 +57,37 @@ const Dashboard = () => {
       percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
     }))
 
+  // Use Soft Pop theme colors
   const COLORS = {
-    primary: '#0ea5e9',
-    success: '#22c55e',
-    warning: '#f59e0b',
-    danger: '#ef4444',
-    purple: '#8b5cf6',
-    pink: '#ec4899'
+    primary: 'oklch(0.5106 0.2301 276.9656)', // Purple
+    secondary: 'oklch(0.7038 0.1230 182.5025)', // Cyan
+    accent: 'oklch(0.7686 0.1647 70.0804)', // Lime
+    destructive: 'oklch(0.6368 0.2078 25.3313)', // Red
+    chart1: 'oklch(0.5106 0.2301 276.9656)', // Primary purple
+    chart2: 'oklch(0.7038 0.1230 182.5025)', // Secondary cyan
+    chart3: 'oklch(0.7686 0.1647 70.0804)', // Accent lime
+    chart4: 'oklch(0.6559 0.2118 354.3084)', // Pink
+    chart5: 'oklch(0.7227 0.1920 149.5793)'  // Teal
   }
 
-  const PIE_COLORS = ['#0ea5e9', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899']
+  const PIE_COLORS = [
+    'oklch(0.5106 0.2301 276.9656)', // Primary purple
+    'oklch(0.7038 0.1230 182.5025)', // Secondary cyan
+    'oklch(0.7686 0.1647 70.0804)', // Accent lime
+    'oklch(0.6559 0.2118 354.3084)', // Pink
+    'oklch(0.7227 0.1920 149.5793)', // Teal
+    'oklch(0.6801 0.1583 276.9349)'  // Light purple
+  ]
 
   return (
     <div className="space-y-6">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Dashboard Overview</h2>
-          <p className="text-gray-600 mt-2">Real user interview insights from 4 participants</p>
+          <h2 className="text-3xl font-bold text-foreground">Dashboard Overview</h2>
+          <p className="text-muted-foreground mt-2">Real user interview insights from 4 participants</p>
         </div>
-        <div className="flex items-center space-x-2 text-sm text-gray-500">
+        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           <Activity className="w-4 h-4" />
           <span>Updated: {new Date().toLocaleDateString()}</span>
         </div>
@@ -93,7 +104,7 @@ const Dashboard = () => {
 
       {/* Key Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Participants</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
@@ -104,7 +115,7 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">User Types</CardTitle>
             <User className="h-4 w-4 text-muted-foreground" />
@@ -117,7 +128,7 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Gender Split</CardTitle>
             <Activity className="h-4 w-4 text-muted-foreground" />
@@ -128,7 +139,7 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Price Range</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
@@ -141,7 +152,7 @@ const Dashboard = () => {
       </div>
 
       {/* Top 3 Critical Insights */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-shadow">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5" />
@@ -158,7 +169,7 @@ const Dashboard = () => {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="font-semibold text-sm">{insight.title}</h4>
-                  <Badge variant={insight.priority === 'Critical' ? 'destructive' : 'default'}>
+                  <Badge variant={insight.priority?.toLowerCase() === 'critical' ? 'critical' : insight.priority?.toLowerCase() === 'high' ? 'high' : insight.priority?.toLowerCase() === 'medium' ? 'medium' : 'low'}>
                     {insight.priority}
                   </Badge>
                   <Badge variant="outline">{insight.percentage}</Badge>
@@ -173,7 +184,7 @@ const Dashboard = () => {
       {/* Demographics Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* User Types */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>User Types</CardTitle>
             <CardDescription>Experience level distribution</CardDescription>
@@ -202,7 +213,7 @@ const Dashboard = () => {
         </Card>
 
         {/* Gender Distribution */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>Gender Distribution</CardTitle>
             <CardDescription>Participant demographics</CardDescription>
@@ -231,7 +242,7 @@ const Dashboard = () => {
         </Card>
 
         {/* Fitness Levels */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>Fitness Levels</CardTitle>
             <CardDescription>Activity frequency</CardDescription>
@@ -263,7 +274,7 @@ const Dashboard = () => {
       {/* Goals and Challenges */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Top Goals */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>Top Fitness Goals</CardTitle>
             <CardDescription>Most common participant goals</CardDescription>
@@ -275,14 +286,14 @@ const Dashboard = () => {
                 <XAxis type="number" />
                 <YAxis dataKey="name" type="category" width={120} />
                 <Tooltip />
-                <Bar dataKey="value" fill={COLORS.success} radius={[0, 4, 4, 0]} />
+                <Bar dataKey="value" fill={COLORS.secondary} radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
 
         {/* Top Challenges */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>Top Challenges</CardTitle>
             <CardDescription>Most frequent pain points</CardDescription>
@@ -294,7 +305,7 @@ const Dashboard = () => {
                 <XAxis type="number" />
                 <YAxis dataKey="name" type="category" width={150} />
                 <Tooltip />
-                <Bar dataKey="value" fill={COLORS.danger} radius={[0, 4, 4, 0]} />
+                <Bar dataKey="value" fill={COLORS.destructive} radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -304,7 +315,7 @@ const Dashboard = () => {
       {/* Budget and Tech Adoption */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Budget Distribution */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>Willingness to Pay</CardTitle>
             <CardDescription>Monthly budget distribution</CardDescription>
@@ -328,14 +339,14 @@ const Dashboard = () => {
                   }
                   return null
                 }} />
-                <Bar dataKey="value" fill={COLORS.warning} radius={[4, 4, 0, 0]} />
+                <Bar dataKey="value" fill={COLORS.accent} radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
 
         {/* Tech Adoption */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
             <CardTitle>Tech Adoption</CardTitle>
             <CardDescription>Technology comfort level</CardDescription>
@@ -347,7 +358,7 @@ const Dashboard = () => {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="value" fill={COLORS.purple} radius={[4, 4, 0, 0]} />
+                <Bar dataKey="value" fill={COLORS.primary} radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -355,7 +366,7 @@ const Dashboard = () => {
       </div>
 
       {/* Pain Point Frequency */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-shadow">
         <CardHeader>
           <CardTitle>Pain Point Frequency</CardTitle>
           <CardDescription>How many participants face each challenge</CardDescription>
@@ -372,15 +383,15 @@ const Dashboard = () => {
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-sm font-medium">{painPoint}</span>
                         <div className="flex items-center gap-2">
-                          <Badge variant={percentage === '100' ? 'destructive' : percentage >= '75' ? 'default' : 'outline'}>
+                          <Badge variant={percentage === '100' ? 'critical' : percentage >= '75' ? 'high' : percentage >= '50' ? 'medium' : 'low'}>
                             {count}/{analyticsData.totalParticipants}
                           </Badge>
                           <span className="text-sm text-muted-foreground">{percentage}%</span>
                         </div>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-muted rounded-full h-2">
                         <div
-                          className={`h-2 rounded-full ${percentage === '100' ? 'bg-red-600' : percentage >= '75' ? 'bg-orange-500' : 'bg-blue-500'}`}
+                          className={`h-2 rounded-full transition-all ${percentage === '100' ? 'bg-destructive' : percentage >= '75' ? 'bg-accent' : 'bg-secondary'}`}
                           style={{ width: `${percentage}%` }}
                         />
                       </div>

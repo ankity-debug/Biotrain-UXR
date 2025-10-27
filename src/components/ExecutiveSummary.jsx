@@ -30,9 +30,9 @@ const ExecutiveSummary = () => {
       {/* Header */}
       <div className="flex justify-between items-start">
         <div>
-          <h1 className="text-4xl font-bold text-gray-900">Executive Summary</h1>
-          <p className="text-gray-600 mt-2 text-lg">BioTrain UX Research Findings - 4 Real User Interviews</p>
-          <p className="text-sm text-gray-500 mt-1">Report Generated: {new Date().toLocaleDateString()}</p>
+          <h1 className="text-4xl font-bold text-foreground">Executive Summary</h1>
+          <p className="text-muted-foreground mt-2 text-lg">BioTrain UX Research Findings - 4 Real User Interviews</p>
+          <p className="text-sm text-muted-foreground mt-1">Report Generated: {new Date().toLocaleDateString()}</p>
         </div>
         <Button onClick={downloadPDF} className="print:hidden">
           <Download className="w-4 h-4 mr-2" />
@@ -41,27 +41,27 @@ const ExecutiveSummary = () => {
       </div>
 
       {/* Key Metrics Overview */}
-      <Card className="bg-gradient-to-r from-primary to-primary/80 text-white border-0">
+      <Card className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground border-0 shadow-lg">
         <CardHeader>
-          <CardTitle className="text-white text-2xl">Research Overview</CardTitle>
+          <CardTitle className="text-primary-foreground text-2xl">Research Overview</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
               <div className="text-4xl font-bold">{analyticsData.totalParticipants}</div>
-              <div className="text-primary-100 text-sm mt-1">Participants Interviewed</div>
+              <div className="text-primary-foreground/80 text-sm mt-1">Participants Interviewed</div>
             </div>
             <div>
               <div className="text-4xl font-bold">{keyInsights.length}</div>
-              <div className="text-primary-100 text-sm mt-1">Key Insights Identified</div>
+              <div className="text-primary-foreground/80 text-sm mt-1">Key Insights Identified</div>
             </div>
             <div>
               <div className="text-4xl font-bold">{opportunityAnalysis.topOpportunities.length}</div>
-              <div className="text-primary-100 text-sm mt-1">Opportunities Mapped</div>
+              <div className="text-primary-foreground/80 text-sm mt-1">Opportunities Mapped</div>
             </div>
             <div>
               <div className="text-4xl font-bold">{Object.keys(userPersonas).length}</div>
-              <div className="text-primary-100 text-sm mt-1">User Personas Created</div>
+              <div className="text-primary-foreground/80 text-sm mt-1">User Personas Created</div>
             </div>
           </div>
         </CardContent>
@@ -139,7 +139,7 @@ const ExecutiveSummary = () => {
                     <h3 className="text-lg font-bold text-gray-900">{insight.title}</h3>
                   </div>
                   <div className="flex gap-2">
-                    <Badge variant="destructive">{insight.priority}</Badge>
+                    <Badge variant={insight.priority?.toLowerCase() === 'critical' ? 'critical' : insight.priority?.toLowerCase() === 'high' ? 'high' : insight.priority?.toLowerCase() === 'medium' ? 'medium' : 'low'}>{insight.priority}</Badge>
                     <Badge variant="outline">{insight.percentage}</Badge>
                   </div>
                 </div>
@@ -421,15 +421,15 @@ const ExecutiveSummary = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Nutrition Tracking Pain:</span>
-                  <Badge variant="destructive">100%</Badge>
+                  <Badge variant="critical">100%</Badge>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Notification Fatigue:</span>
-                  <Badge variant="default">75%</Badge>
+                  <Badge variant="high">75%</Badge>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Prefer Gym vs Home:</span>
-                  <Badge variant="secondary">100%</Badge>
+                  <Badge variant="success">100%</Badge>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Price Range:</span>
