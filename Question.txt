@@ -1,0 +1,124 @@
+
+"Details
+(date, time, location)"
+
+Icebreakers
+"Hi! I’m Vidhi Thakker, a UX Researcher with Lemon Yellow, working with BioTrain. Thanks so much for joining today.
+We’re trying to understand people’s relationship with fitness, health, and well-being — how it fits into daily life, what motivates or challenges them, and how they use technology to support it.
+There are no right or wrong answers here, we just want your honest thoughts and experiences."
+"Can you start by telling me a little about yourself?
+Name
+Age
+Gender
+Occupation (e.g., student, working professional, homemaker, etc.)"
+Where are you currently based?
+How does your typical day look?
+How active would you say you are generally: daily, weekly?
+
+Fitness Habits & Routine
+Do you engage in any kind of physical activity in your day-to-day life?
+
+if yes
+What kind of activity (gym, home, outdoor, yoga, cycling, etc.)?
+How long have you been doing this?
+What motivated you to start, and what keeps you going?
+Describe a typical routine (timing, frequency, intensity).
+Where do you usually work out?
+Have you worked out at home? How do you plan those workouts? (YouTube, apps, past routines, improvising)
+What challenges do you face while exercising? (motivation, space, guidance, equipment, flow interruptions)
+How comfortable are you using your phone or apps during workouts? Helpful or distracting?
+Do you prefer exercising alone, with friends, or with a trainer/community? Why?
+"Are interactive guides, tutorials, or videos useful?
+"
+
+if no
+"Do you track any health metrics (steps, sleep, heart rate)?
+"
+Have you considered being more active? What would help you start?
+
+"For female participants:
+"
+Do you track your menstrual cycle? How (app, calendar, notes)?
+How does your cycle impact your energy, workout consistency, or diet?
+Would having menstrual-cycle-aware suggestions for your workouts or your diet in a fitness app be helpful for you?
+
+Motivation & Consistency
+What motivates you to start and stay consistent?
+When routines fail or you skip a workout, what usually causes it, and how do you get back on track?
+How does visible progress or feedback influence your motivation?
+Would adaptive micro-cues or context-aware nudges help you maintain consistency?
+
+Scenario Based Probes
+Last time you skipped or modified a workout… why? How could an app have helped?
+Biggest challenges in maintaining routine or motivation.
+Have you set specific fitness goals? (weight, strength, consistency, diet improvements)
+How do you track progress? Which metrics or tools matter most?
+What frustrates you about tracking or apps?
+
+Health & Limitations
+Do you have any physical limitations, injuries, or health conditions affecting your routine?
+How do you adapt your workouts?
+Would in-app tips, guides, or feedback make you feel safer and more confident while exercising?
+Are there any precautions or supports you look for in apps, devices, or routines because of these factors?
+How comfortable would you be sharing health or medical data with an app for more accurate guidance?
+
+Nutrition & Diet
+Are you following any diet or nutrition plan? What kind (type, strictness, motivation)?
+Have you worked with a nutritionist, dietitian, or used a nutrition-focused app? How was your experience?
+Do your workout and nutrition guidance come from the same person/source or separate?
+How do you plan your meals—structured or intuitive?
+Do you track nutrition metrics like calories, macros, or other data? How do you track, and what matters most to you?
+How do your workouts affect your diet, and vice versa?
+Do you use supplements? Which ones and why?
+What challenges do you face maintaining your diet? (time, motivation, cravings, social settings)
+Would culturally or regionally relevant meal suggestions help? Examples: Indian meals, fasting-friendly options for Ramadan, etc.
+Would AI-based meal suggestions motivate or support you in following your nutrition goals?
+
+Scenario Based Probes
+Think of the last time your diet planning didn’t go as intended… what happened? How could an app have helped?
+Are there any features you wish apps offered to make nutrition tracking or planning easier?
+
+Tools, Apps & Tracking
+Do you use any fitness or wellness apps? Which ones?
+
+if yes
+Why did you choose these apps? How often do you use them?
+Can you walk me through a typical session? What works well, what frustrates you?
+
+Which devices or wearables do you use? Preference for automatic vs manual tracking?
+How do you feel about apps collecting or sharing health data? Trust or privacy concerns?
+Have you ever stopped using an app? Why?
+
+BioTrain Specific Probes:
+Based on the name “BioTrain,” what do you think this app is about?
+What features or support would you expect?
+Does the name feel motivating, relevant, or trustworthy? Why/why not?
+If you could improve the name, how would you?
+
+Scenario Based Probes
+If you miss a workout, how would you like an app to remind or nudge you to get back on track?
+When it comes to personalized nutrition guidance, what kind of suggestions or support would be most helpful to you?
+For recovery tips or adaptive suggestions, how would you prefer an app to deliver them? (e.g., notifications, in-app prompts, emails)
+How do you feel about gamification elements like streaks, badges, or leaderboards → motivating, fun, or annoying?
+Are there any features in fitness or wellness apps that you tend to ignore, abandon, or dislike? Which ones and why?
+What kind of app interventions would actually help you stay consistent and improve your results?
+
+Pricing & Subscriptions
+Have you paid for a fitness app or service before? What was valuable or not?
+Features or support that would make you willing to pay for an app?
+Reasonable price range and preferred payment model (one-time, monthly, pay-per-feature)?
+Would integrating holistic wellness (workout + nutrition + coaching) justify a paid tier?
+
+Support Systems & Community
+Who do you usually work out or stay active with (friends, family, online communities)?
+How do social features in apps (challenges, leaderboards, shared progress) affect you?
+Do you prefer social or private self-paced experiences? Why?
+Would live or virtual coach support improve consistency or trust?
+How do people around you influence motivation positively or negatively?
+
+Wrap-Up
+"If an app truly “got you,” your life, schedule, and motivation, what would it do differently?
+"
+Features or experiences you wish existed but haven’t seen?
+
+Thank you so much for your time! This was very helpful and will directly shape how we design the next phase of BioTrain.
