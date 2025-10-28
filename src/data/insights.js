@@ -4,24 +4,24 @@ export const analyticsData = {
   totalParticipants: 7,
 
   userTypes: {
-    'Advanced': 1,  // Amish
+    'Advanced': 1,  // Ramesh
     'Intermediate': 4,  // Aniket, Majid, Jessica, Dhananjay
     'Power User': 2  // Dhruv (fitness professional), Shubham (trainer/coach)
   },
 
   gender: {
-    'Male': 6,  // Amish, Aniket, Majid, Dhananjay, Dhruv, Shubham
+    'Male': 6,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham
     'Female': 1  // Jessica
   },
 
   fitnessLevels: {
     'Very High': 2,  // Dhruv (8-15 workouts/month, professional), Shubham (6 days, 25-30 sets, trainer)
-    'High': 1,  // Amish (6 days, 2hrs)
+    'High': 1,  // Ramesh (6 days, 2hrs)
     'Medium': 4  // Aniket (4 days), Majid (3-4 days), Jessica (3-4 days), Dhananjay (2-3 days + swimming)
   },
 
   budgets: {
-    'Very High ($180-240/month)': 1,  // Amish
+    'Very High ($180-240/month)': 1,  // Ramesh
     'Medium-High': 1,  // Dhananjay (with GDPR privacy requirements)
     'Medium': 3,  // Majid, Jessica, Shubham (would pay for value)
     'Low-Medium ($60/year)': 1,  // Dhruv
@@ -29,7 +29,7 @@ export const analyticsData = {
   },
 
   techAdoption: {
-    'Very High': 3,  // Amish (ChatGPT power user), Dhruv (5+ apps, Whoop, understands HRV), Shubham (ChatGPT, smart ring)
+    'Very High': 3,  // Ramesh (ChatGPT power user), Dhruv (5+ apps, Whoop, understands HRV), Shubham (ChatGPT, smart ring)
     'Medium-High': 2,  // Aniket, Jessica (Apple Watch)
     'Medium': 2  // Majid, Dhananjay (Fitbit, cautious about AI)
   },
@@ -37,11 +37,11 @@ export const analyticsData = {
   commonGoals: {
     'Weight Loss': 2,  // Jessica, Dhruv (25%→20% body fat)
     'Weight Gain': 1,  // Aniket
-    'Weight Maintenance': 3,  // Amish, Dhananjay (prevent degeneration), Shubham (12% body fat)
-    'Muscle Building': 5,  // Amish, Aniket, Majid, Dhruv, Shubham
+    'Weight Maintenance': 3,  // Ramesh, Dhananjay (prevent degeneration), Shubham (12% body fat)
+    'Muscle Building': 5,  // Ramesh, Aniket, Majid, Dhruv, Shubham
     'Athletic Fitness': 1,  // Majid
     'Work-Life Balance': 1,  // Jessica
-    'Cardio': 1,  // Amish
+    'Cardio': 1,  // Ramesh
     'Performance (Strength PRs)': 1,  // Dhruv
     'Prevent Degeneration': 1,  // Dhananjay
     'Manage Chronic Conditions': 1,  // Dhananjay (back pain)
@@ -49,16 +49,16 @@ export const analyticsData = {
   },
 
   commonChallenges: {
-    'Nutrition Tracking': 6,  // Amish, Aniket, Majid, Jessica, Dhruv, Shubham (needs raw ingredients)
-    'App Fragmentation': 2,  // Amish, Dhruv (5+ apps each)
+    'Nutrition Tracking': 6,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Shubham (needs raw ingredients)
+    'App Fragmentation': 2,  // Ramesh, Dhruv (5+ apps each)
     'Work Stress': 2,  // Majid (9-10hr), Jessica (teaching)
-    'Travel Disruption': 2,  // Amish, Aniket
-    'Meal Prep Time': 3,  // Amish, Jessica, Shubham
-    'Time Constraints': 5,  // Amish, Aniket, Majid, Jessica, Dhruv
-    'Notification Fatigue': 5,  // Amish, Aniket, Jessica, Dhruv, Shubham
+    'Travel Disruption': 2,  // Ramesh, Aniket
+    'Meal Prep Time': 3,  // Ramesh, Jessica, Shubham
+    'Time Constraints': 5,  // Ramesh, Aniket, Majid, Jessica, Dhruv
+    'Notification Fatigue': 5,  // Ramesh, Aniket, Jessica, Dhruv, Shubham
     'Home Workout Motivation': 3,  // Aniket, Jessica, Dhananjay
     'Chronic Injuries': 3,  // Jessica (knee), Dhananjay (back), Shubham (lower back pain)
-    'Lack of Personalization': 4,  // Amish, Majid, Jessica, Dhananjay
+    'Lack of Personalization': 4,  // Ramesh, Majid, Jessica, Dhananjay
     'AI Trust Issues': 2,  // Dhananjay (prefers human), Dhruv (not specific enough)
     'Bad Sleep': 1,  // Dhruv
     'Frequent Illness': 1,  // Dhruv
@@ -69,9 +69,9 @@ export const analyticsData = {
   preferredActivities: {
     'Gym': 7,  // ALL participants prefer gym
     'Group Classes': 2,  // Jessica, Dhananjay (HIIT)
-    'Boxing': 1,  // Amish
+    'Boxing': 1,  // Ramesh
     'Walking': 1,  // Jessica (Sunday group)
-    'Cycling': 1,  // Amish
+    'Cycling': 1,  // Ramesh
     'Hiking': 1,  // Majid
     'Running/Sprinting': 2,  // Majid, Shubham (Sunday sprints)
     'Swimming': 1,  // Dhananjay
@@ -80,7 +80,7 @@ export const analyticsData = {
   },
 
   willingnessToPay: {
-    'Very High ($180-240/month)': 1,  // Amish
+    'Very High ($180-240/month)': 1,  // Ramesh
     'Medium-High (with data privacy)': 1,  // Dhananjay (wants free trial first)
     'Medium ($20-50/month)': 3,  // Majid, Jessica, Shubham
     'Low-Medium ($60/year)': 1,  // Dhruv
@@ -88,7 +88,7 @@ export const analyticsData = {
   },
 
   socialPreferences: {
-    'Solo': 3,  // Amish, Dhruv (strong preference, dislikes distractions), Shubham (loves working alone)
+    'Solo': 3,  // Ramesh, Dhruv (strong preference, dislikes distractions), Shubham (loves working alone)
     'Partner': 1,  // Aniket
     'Community': 2,  // Majid, Dhananjay (gym classes with familiar faces)
     'Group Classes': 1  // Jessica
@@ -114,7 +114,7 @@ const allInsights = [
   {
     id: 'insight-1',
     title: 'Nutrition Tracking is Universal #1 Pain Point',
-    description: '86% of participants (6/7) struggle with nutrition tracking. This is the BIGGEST opportunity. Amish: no personalized guidance. Aniket: cannot meet targets when traveling. Majid: needs systematic accountable way. Jessica: meal prep time/energy constraints. Dhruv: diet consistency is hardest challenge. Shubham: CRITICAL need for raw ingredient tracking (not "one bowl" measurements) for accuracy.',
+    description: '86% of participants (6/7) struggle with nutrition tracking. This is the BIGGEST opportunity. Ramesh: no personalized guidance. Aniket: cannot meet targets when traveling. Majid: needs systematic accountable way. Jessica: meal prep time/energy constraints. Dhruv: diet consistency is hardest challenge. Shubham: CRITICAL need for raw ingredient tracking (not "one bowl" measurements) for accuracy.',
     category: 'Critical Pain Point',
     priority: 'Critical',
     impact: 'Very High',
@@ -124,7 +124,7 @@ const allInsights = [
   {
     id: 'insight-2',
     title: 'Extreme Price Sensitivity: 60-96x Range',
-    description: 'Willingness to pay varies dramatically from $2.50/month (Aniket) to $240/month (Amish). Dhruv would pay $60/year for integrated solution. Dhananjay wants free trial first with GDPR compliance. Shubham would pay medium range for valuable features. MUST have tiered pricing strategy: Free tier, $5-10, $20-30, $50-100, $150-250.',
+    description: 'Willingness to pay varies dramatically from $2.50/month (Aniket) to $240/month (Ramesh). Dhruv would pay $60/year for integrated solution. Dhananjay wants free trial first with GDPR compliance. Shubham would pay medium range for valuable features. MUST have tiered pricing strategy: Free tier, $5-10, $20-30, $50-100, $150-250.',
     category: 'Business Model',
     priority: 'Critical',
     impact: 'Very High',
@@ -144,7 +144,7 @@ const allInsights = [
   {
     id: 'insight-4',
     title: 'Social Preferences are Completely Polarized',
-    description: 'Amish, Dhruv & Shubham: Solo (hate social features, want ME time, love working alone). Aniket: Partner-focused. Majid & Dhananjay: Community-oriented (gym classes with familiar faces). Jessica: Group classes. Solution: Flexible social settings with private/community toggle.',
+    description: 'Ramesh, Dhruv & Shubham: Solo (hate social features, want ME time, love working alone). Aniket: Partner-focused. Majid & Dhananjay: Community-oriented (gym classes with familiar faces). Jessica: Group classes. Solution: Flexible social settings with private/community toggle.',
     category: 'Features',
     priority: 'High',
     impact: 'Very High',
@@ -154,7 +154,7 @@ const allInsights = [
   {
     id: 'insight-5',
     title: 'Notification Fatigue Affects 71% of Users',
-    description: 'Amish: annoying, has internal clock. Aniket: keeps notifications OFF. Jessica: does not engage with app reminders. Dhruv: finds them frustrating, reminds him of failure. Shubham: doesn\'t like notifications, finds them annoying during busy schedules. BUT Dhananjay: notifications helpful for visual confirmation. Solution: Context-aware, flexible time windows, opt-in only.',
+    description: 'Ramesh: annoying, has internal clock. Aniket: keeps notifications OFF. Jessica: does not engage with app reminders. Dhruv: finds them frustrating, reminds him of failure. Shubham: doesn\'t like notifications, finds them annoying during busy schedules. BUT Dhananjay: notifications helpful for visual confirmation. Solution: Context-aware, flexible time windows, opt-in only.',
     category: 'UX Design',
     priority: 'High',
     impact: 'High',
@@ -174,7 +174,7 @@ const allInsights = [
   {
     id: 'insight-7',
     title: '100% Prefer Gym Over Home Workouts',
-    description: 'ALL 7 participants prefer gym/group classes. Home workouts: no motivation (Jessica, Aniket, Dhananjay), no space (Majid), only during lockdown (Amish, Shubham with limited equipment), don\'t enjoy bodyweight (Dhruv). BUT still need travel-friendly no-equipment options.',
+    description: 'ALL 7 participants prefer gym/group classes. Home workouts: no motivation (Jessica, Aniket, Dhananjay), no space (Majid), only during lockdown (Ramesh, Shubham with limited equipment), don\'t enjoy bodyweight (Dhruv). BUT still need travel-friendly no-equipment options.',
     category: 'Market Opportunity',
     priority: 'Medium',
     impact: 'High',
@@ -184,7 +184,7 @@ const allInsights = [
   {
     id: 'insight-8',
     title: 'AI Trust is Polarized: High Trust vs Need Human Oversight',
-    description: 'High trust: Amish 90-99%, Shubham (ChatGPT for nutrition, body fat estimation), Aniket tried ChatGPT. Conditional: Majid (if tailored), Dhruv (gets general not specific answers). Low trust: Dhananjay prefers human-reviewed AI, Jessica doesn\'t use AI. KEY: Power users want it, older users need human touch, must be personalized.',
+    description: 'High trust: Ramesh 90-99%, Shubham (ChatGPT for nutrition, body fat estimation), Aniket tried ChatGPT. Conditional: Majid (if tailored), Dhruv (gets general not specific answers). Low trust: Dhananjay prefers human-reviewed AI, Jessica doesn\'t use AI. KEY: Power users want it, older users need human touch, must be personalized.',
     category: 'Features',
     priority: 'High',
     impact: 'High',
@@ -214,7 +214,7 @@ const allInsights = [
   {
     id: 'insight-11',
     title: 'App Fragmentation is Critical Pain Point for Power Users',
-    description: 'Amish & Dhruv each use 5+ apps (MyFitnessPal, Apple Watch, ChatGPT / Whoop, HealthifyMe, Hevy, Apple Health, Excel). Dhruv: "HUGE GAP between apps. Always wished for ONE application." This is THE opportunity for integrated solution targeting power users willing to pay premium.',
+    description: 'Ramesh & Dhruv each use 5+ apps (MyFitnessPal, Apple Watch, ChatGPT / Whoop, HealthifyMe, Hevy, Apple Health, Excel). Dhruv: "HUGE GAP between apps. Always wished for ONE application." This is THE opportunity for integrated solution targeting power users willing to pay premium.',
     category: 'Product Strategy',
     priority: 'Critical',
     impact: 'Very High',
@@ -284,7 +284,7 @@ const allInsights = [
   {
     id: 'insight-18',
     title: 'Muscle Pump Addiction as Primary Motivator',
-    description: 'Shubham: "I can\'t live even a single day without workout. That muscle pump is my addiction." Workout is essential for mood management, not optional. Similar to Amish (survival/mental health). For highly disciplined users, intrinsic motivation > external gamification. Progress visibility (week-over-week comparison) works better than notifications/streaks.',
+    description: 'Shubham: "I can\'t live even a single day without workout. That muscle pump is my addiction." Workout is essential for mood management, not optional. Similar to Ramesh (survival/mental health). For highly disciplined users, intrinsic motivation > external gamification. Progress visibility (week-over-week comparison) works better than notifications/streaks.',
     category: 'User Psychology',
     priority: 'Medium',
     impact: 'High',
@@ -358,7 +358,7 @@ export const painPointAnalysis = {
       painPoint: 'Nutrition tracking difficulty',
       frequency: 6,
       severity: 'Critical',
-      users: ['Amish', 'Aniket', 'Majid', 'Jessica', 'Dhruv', 'Shubham'],
+      users: ['Ramesh', 'Aniket', 'Majid', 'Jessica', 'Dhruv', 'Shubham'],
       journeyStage: 'Retention',
       percentage: '86%'
     },
@@ -366,7 +366,7 @@ export const painPointAnalysis = {
       painPoint: 'App fragmentation / lack of integration',
       frequency: 2,
       severity: 'Critical',
-      users: ['Amish', 'Dhruv'],
+      users: ['Ramesh', 'Dhruv'],
       journeyStage: 'Retention',
       percentage: '29%'
     },
@@ -374,7 +374,7 @@ export const painPointAnalysis = {
       painPoint: 'Lack of personalization',
       frequency: 4,
       severity: 'High',
-      users: ['Amish', 'Majid', 'Jessica', 'Dhananjay'],
+      users: ['Ramesh', 'Majid', 'Jessica', 'Dhananjay'],
       journeyStage: 'Consideration',
       percentage: '57%'
     },
@@ -382,7 +382,7 @@ export const painPointAnalysis = {
       painPoint: 'Notification fatigue',
       frequency: 5,
       severity: 'Medium-High',
-      users: ['Amish', 'Aniket', 'Jessica', 'Dhruv', 'Shubham'],
+      users: ['Ramesh', 'Aniket', 'Jessica', 'Dhruv', 'Shubham'],
       journeyStage: 'Retention',
       percentage: '71%'
     },
@@ -422,7 +422,7 @@ export const painPointAnalysis = {
       painPoint: 'Travel disrupts consistency',
       frequency: 2,
       severity: 'High',
-      users: ['Amish', 'Aniket'],
+      users: ['Ramesh', 'Aniket'],
       journeyStage: 'Retention',
       percentage: '29%'
     },
@@ -430,7 +430,7 @@ export const painPointAnalysis = {
       painPoint: 'Meal prep time/energy constraints',
       frequency: 3,
       severity: 'High',
-      users: ['Amish', 'Jessica', 'Shubham'],
+      users: ['Ramesh', 'Jessica', 'Shubham'],
       journeyStage: 'Retention',
       percentage: '43%'
     },
@@ -452,7 +452,7 @@ export const opportunityAnalysis = {
       marketSize: 'Large',
       effort: 'Very High',
       impact: 'Critical',
-      users: ['Amish', 'Dhruv', 'All power users'],
+      users: ['Ramesh', 'Dhruv', 'All power users'],
       priorityScore: 100,
       affectedUsers: 2,
       percentage: '29% of sample, targets power users willing to pay premium'
@@ -492,7 +492,7 @@ export const opportunityAnalysis = {
       marketSize: 'Large',
       effort: 'High',
       impact: 'Very High',
-      users: ['Amish', 'Aniket', 'Majid', 'Dhruv', 'Shubham', 'Dhananjay (with human review)'],
+      users: ['Ramesh', 'Aniket', 'Majid', 'Dhruv', 'Shubham', 'Dhananjay (with human review)'],
       priorityScore: 95,
       affectedUsers: 6,
       percentage: '86%'
@@ -552,7 +552,7 @@ export const opportunityAnalysis = {
       marketSize: 'Medium',
       effort: 'Medium',
       impact: 'High',
-      users: ['Amish', 'Aniket'],
+      users: ['Ramesh', 'Aniket'],
       priorityScore: 85,
       affectedUsers: 2,
       percentage: '29%'
@@ -582,7 +582,7 @@ export const opportunityAnalysis = {
       marketSize: 'Medium',
       effort: 'Medium',
       impact: 'High',
-      users: ['Jessica', 'Amish', 'Shubham'],
+      users: ['Jessica', 'Ramesh', 'Shubham'],
       priorityScore: 75,
       affectedUsers: 3,
       percentage: '43%'
@@ -614,7 +614,7 @@ export const opportunityAnalysis = {
 export const userPersonas = {
   'Power Users & Fitness Professionals': {
     description: 'Elite fitness enthusiasts and trainers with deep expertise. Highly disciplined, workout 5-6+ days/week. Need advanced features, precision tracking, and client management tools. Value integration over fragmentation. Solo-focused, dislike social features. Tech-savvy AI power users.',
-    representatives: ['Amish (Advanced)', 'Dhruv (Trainer)', 'Shubham (Coach)'],
+    representatives: ['Ramesh (Advanced)', 'Dhruv (Trainer)', 'Shubham (Coach)'],
     count: 3,
     percentage: '43% of sample',
     keyNeeds: [
@@ -628,7 +628,7 @@ export const userPersonas = {
       'Workout set compensation algorithm',
       'Simple intuitive UI (CRITICAL)'
     ],
-    willingnessToPay: 'Wide range: $60/year (Dhruv) to $240/month (Amish). Medium-High average ($20-50/month)',
+    willingnessToPay: 'Wide range: $60/year (Dhruv) to $240/month (Ramesh). Medium-High average ($20-50/month)',
     techAdoption: 'Very High (5+ apps, ChatGPT, wearables, understands science)',
     fitnessLevel: 'Very High (5-6 days/week, 2+ hours, 15-30 sets)',
     challenges: [

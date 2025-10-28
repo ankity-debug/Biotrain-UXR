@@ -610,7 +610,7 @@ const Dashboard = () => {
         <CheckCircle2 className="h-4 w-4" style={{ color: COLORS.chart5 }} />
         <AlertTitle>Dashboard Updated</AlertTitle>
         <AlertDescription>
-          All data reflects real interviews from {analyticsData.totalParticipants} participants: Amish, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, and Shubham.
+          All data reflects real interviews from {analyticsData.totalParticipants} participants: Ramesh, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, and Shubham.
         </AlertDescription>
       </Alert>
     </div>

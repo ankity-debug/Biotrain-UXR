@@ -475,11 +475,11 @@ export const aniketInterview = {
       ]
     },
 
-    comparisonToAmish: {
-      priceSensitivity: '45-60x difference (Amish: $180-240/mo vs Aniket: $2.50-4/mo)',
-      motivationSource: 'Amish: Internal discipline | Aniket: External (partner, environment)',
-      socialPreference: 'Amish: Solo | Aniket: Partner/social',
-      trainerUse: 'Amish: None (self-guided) | Aniket: Yes (values trainer highly)',
+    comparisonToRamesh: {
+      priceSensitivity: '45-60x difference (Ramesh: $180-240/mo vs Aniket: $2.50-4/mo)',
+      motivationSource: 'Ramesh: Internal discipline | Aniket: External (partner, environment)',
+      socialPreference: 'Ramesh: Solo | Aniket: Partner/social',
+      trainerUse: 'Ramesh: None (self-guided) | Aniket: Yes (values trainer highly)',
       reminderPreference: 'Both find them annoying, but Aniket finds initial period helpful'
     }
   }

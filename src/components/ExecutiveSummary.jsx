@@ -19,7 +19,7 @@ const ExecutiveSummary = () => {
     invalidated: 3,
     newPersonasIdentified: 4,
     originalPersonas: [
-      { name: 'Ramesh (Advanced)', status: 'replaced', reason: 'Replaced with "Power Users & Fitness Professionals" - consolidates Amish, Dhruv, Shubham (43% of sample)' },
+      { name: 'Ramesh (Advanced)', status: 'replaced', reason: 'Replaced with "Power Users & Fitness Professionals" - consolidates Ramesh, Dhruv, Shubham (43% of sample)' },
       { name: 'Aniket (Intermediate)', status: 'replaced', reason: 'Split into "Intermediate Enthusiasts" (Aniket, Majid 29%) and "Busy Professionals" (Jessica 14%)' },
       { name: 'Majid (Beginner)', status: 'invalidated', reason: 'Real data shows Majid is INTERMEDIATE, not beginner. Added "Health-Conscious Experienced Professionals" for 40s-50s+ demographic' }
     ]
@@ -354,7 +354,7 @@ const ExecutiveSummary = () => {
             },
             {
               title: '3. HIGH: Build Flexible Social Settings',
-              desc: 'Social preferences are completely polarized: Amish wants solo/private, Aniket wants partner features, Majid wants community, Jessica wants group classes. Solution: Private/Community toggle with granular controls.',
+              desc: 'Social preferences are completely polarized: Ramesh wants solo/private, Aniket wants partner features, Majid wants community, Jessica wants group classes. Solution: Private/Community toggle with granular controls.',
               priority: 'HIGH',
               affected: '100%'
             },
@@ -366,7 +366,7 @@ const ExecutiveSummary = () => {
             },
             {
               title: '5. MEDIUM: Fix Notification Fatigue (75% Issue)',
-              desc: '75% of users (3/4) find notifications annoying. Amish has internal clock, Aniket keeps them OFF, Jessica does not engage. Solution: Opt-in only, context-aware, flexible time windows, no pressure.',
+              desc: '75% of users (3/4) find notifications annoying. Ramesh has internal clock, Aniket keeps them OFF, Jessica does not engage. Solution: Opt-in only, context-aware, flexible time windows, no pressure.',
               priority: 'MEDIUM',
               affected: '75%'
             }

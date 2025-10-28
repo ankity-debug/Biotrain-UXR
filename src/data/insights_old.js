@@ -1,40 +1,40 @@
 export const analyticsData = {
   userTypes: {
-    'Advanced': 2,  // Ramesh, Amish
+    'Advanced': 2,  // Ramesh, Ramesh
     'Intermediate': 2,  // Aniket, Aniket
     'Beginner': 1  // Majid
   },
   fitnessLevels: {
-    'High': 2,  // Ramesh, Amish
+    'High': 2,  // Ramesh, Ramesh
     'Medium': 2,  // Aniket, Aniket
     'Low': 1  // Majid
   },
   budgets: {
-    'High': 2,  // Ramesh, Amish
+    'High': 2,  // Ramesh, Ramesh
     'Medium-Low': 1,  // Aniket
     'Medium': 1,  // Aniket
     'Low': 1  // Majid
   },
   techAdoption: {
-    'High': 3,  // Ramesh, Amish, Aniket
+    'High': 3,  // Ramesh, Ramesh, Aniket
     'Medium-High': 1,  // Aniket
     'Low': 1  // Majid
   },
   commonGoals: {
     'Weight Loss': 3,  // Ramesh, Aniket, Majid
     'Weight Gain': 1,  // Aniket
-    'Muscle Building': 3,  // Ramesh, Amish, Aniket
-    'Weight Maintenance': 1,  // Amish
+    'Muscle Building': 3,  // Ramesh, Ramesh, Aniket
+    'Weight Maintenance': 1,  // Ramesh
     'General Fitness': 1,  // Aniket
     'Health Improvement': 1,  // Majid
-    'Cardio': 1,  // Amish
+    'Cardio': 1,  // Ramesh
     'Consistency': 1,  // Aniket
     'Stay Active': 1  // Aniket
   },
   commonChallenges: {
     'Motivation': 2,  // Aniket, Majid
     'Time Management': 1,  // Ramesh
-    'Late Meal Timing': 1,  // Amish
+    'Late Meal Timing': 1,  // Ramesh
     'Travel Disruption': 1,  // Aniket
     'Meal Timing When Traveling': 1,  // Aniket
     'Home Workout Motivation': 1,  // Aniket
@@ -43,10 +43,10 @@ export const analyticsData = {
     'Stress Management': 1  // Aniket
   },
   preferredActivities: {
-    'Gym': 4,  // Ramesh, Amish, Aniket, Aniket
+    'Gym': 4,  // Ramesh, Ramesh, Aniket, Aniket
     'Walking': 3,  // Aniket, Majid, Aniket (evening walks)
-    'Boxing': 1,  // Amish
-    'Cycling': 2,  // Amish, Aniket
+    'Boxing': 1,  // Ramesh
+    'Cycling': 2,  // Ramesh, Aniket
     'Swimming': 2,  // Ramesh, Majid
     'Running': 1,  // Ramesh
     'Home Workouts': 1,  // Aniket
@@ -54,7 +54,7 @@ export const analyticsData = {
     'Resistance Bands': 1  // Aniket (COVID)
   },
   willingnessToPay: {
-    'Very High ($180-240/month)': 1,  // Amish
+    'Very High ($180-240/month)': 1,  // Ramesh
     'High ($50-100/month)': 1,  // Ramesh
     'Medium ($10-20/month)': 1,  // Aniket
     'Medium-Low ($2.50-4/month)': 1,  // Aniket
@@ -62,16 +62,16 @@ export const analyticsData = {
   },
   trainerUsage: {
     'Has Trainer': 1,  // Aniket
-    'No Trainer (Self-guided)': 2,  // Amish, Ramesh
+    'No Trainer (Self-guided)': 2,  // Ramesh, Ramesh
     'No Trainer (Beginner)': 1  // Majid
   },
   workoutPreference: {
-    'Solo': 1,  // Amish
+    'Solo': 1,  // Ramesh
     'With Partner': 1,  // Aniket
     'Flexible': 2  // Ramesh, Aniket
   },
   dietApproach: {
-    'Self-created': 1,  // Amish
+    'Self-created': 1,  // Ramesh
     'Trainer-designed': 1,  // Aniket
     'App-based': 1,  // Ramesh
     'Flexible': 1  // Aniket
@@ -82,7 +82,7 @@ export const keyInsights = [
   {
     id: 'insight-1',
     title: 'Diverse User Types Require Different Approaches',
-    description: 'We have three distinct user types: Advanced (Ramesh, Amish), Intermediate (Aniket, Aniket), and Beginner (Majid). Each requires different onboarding and features.',
+    description: 'We have three distinct user types: Advanced (Ramesh, Ramesh), Intermediate (Aniket, Aniket), and Beginner (Majid). Each requires different onboarding and features.',
     category: 'User Segmentation',
     priority: 'High',
     impact: 'High',
@@ -91,7 +91,7 @@ export const keyInsights = [
   {
     id: 'insight-2',
     title: 'Extreme Price Sensitivity Range ($2.50 to $240/month)',
-    description: 'Willingness to pay varies 60-96x from $2.50/month (Aniket) to $240/month (Amish). Critical tiered pricing needed.',
+    description: 'Willingness to pay varies 60-96x from $2.50/month (Aniket) to $240/month (Ramesh). Critical tiered pricing needed.',
     category: 'Business Model',
     priority: 'High',
     impact: 'High',
@@ -100,7 +100,7 @@ export const keyInsights = [
   {
     id: 'insight-3',
     title: 'Advanced Users Split: Solo vs Social',
-    description: 'Advanced users have opposing needs: Amish prefers solo/private workouts, while Ramesh wants community features. Requires flexible social settings.',
+    description: 'Advanced users have opposing needs: Ramesh prefers solo/private workouts, while Ramesh wants community features. Requires flexible social settings.',
     category: 'User Segmentation',
     priority: 'High',
     impact: 'High',
@@ -109,7 +109,7 @@ export const keyInsights = [
   {
     id: 'insight-4',
     title: 'Health Data Integration is Premium Feature',
-    description: 'Advanced users (Amish) willing to pay premium for blood work analysis and health clinic integration. Beginner/Intermediate users less interested.',
+    description: 'Advanced users (Ramesh) willing to pay premium for blood work analysis and health clinic integration. Beginner/Intermediate users less interested.',
     category: 'Features',
     priority: 'High',
     impact: 'Medium',
@@ -127,7 +127,7 @@ export const keyInsights = [
   {
     id: 'insight-6',
     title: 'Notification Fatigue is Universal',
-    description: 'Both Amish and Aniket find excessive notifications annoying. Smart, context-aware nudges needed, not constant reminders.',
+    description: 'Both Ramesh and Aniket find excessive notifications annoying. Smart, context-aware nudges needed, not constant reminders.',
     category: 'UX Design',
     priority: 'High',
     impact: 'Medium',
@@ -136,7 +136,7 @@ export const keyInsights = [
   {
     id: 'insight-7',
     title: 'AI Trust is High Among Tech-Savvy Users',
-    description: 'Amish trusts ChatGPT 90-99% for fitness advice. Aniket tried ChatGPT and found it helpful. AI recommendations viable for 60% of users.',
+    description: 'Ramesh trusts ChatGPT 90-99% for fitness advice. Aniket tried ChatGPT and found it helpful. AI recommendations viable for 60% of users.',
     category: 'Features',
     priority: 'Medium',
     impact: 'High',
@@ -177,21 +177,21 @@ export const painPointAnalysis = {
       painPoint: 'Lack of integrated platform (fragmented apps)',
       frequency: 3,
       severity: 'High',
-      users: ['Ramesh', 'Amish', 'Aniket'],
+      users: ['Ramesh', 'Ramesh', 'Aniket'],
       journeyStage: 'Consideration/Onboarding'
     },
     {
       painPoint: 'Travel disrupts routine/meal timing',
       frequency: 2,
       severity: 'High',
-      users: ['Amish', 'Aniket'],
+      users: ['Ramesh', 'Aniket'],
       journeyStage: 'Retention'
     },
     {
       painPoint: 'Lack of personalized guidance',
       frequency: 3,
       severity: 'High',
-      users: ['Ramesh', 'Amish', 'Majid'],
+      users: ['Ramesh', 'Ramesh', 'Majid'],
       journeyStage: 'Retention'
     },
     {
@@ -205,7 +205,7 @@ export const painPointAnalysis = {
       painPoint: 'Late meal timing / meal prep challenges',
       frequency: 2,
       severity: 'Medium',
-      users: ['Amish', 'Aniket'],
+      users: ['Ramesh', 'Aniket'],
       journeyStage: 'Retention'
     },
     {
@@ -247,7 +247,7 @@ export const opportunityAnalysis = {
       marketSize: 'Large',
       effort: 'High',
       impact: 'High',
-      users: ['Ramesh', 'Amish', 'Aniket', 'Aniket'],
+      users: ['Ramesh', 'Ramesh', 'Aniket', 'Aniket'],
       priorityScore: 92
     },
     {
@@ -255,7 +255,7 @@ export const opportunityAnalysis = {
       marketSize: 'Medium',
       effort: 'High',
       impact: 'Medium',
-      users: ['Amish', 'Ramesh'],
+      users: ['Ramesh', 'Ramesh'],
       priorityScore: 75
     },
     {
@@ -263,7 +263,7 @@ export const opportunityAnalysis = {
       marketSize: 'Medium',
       effort: 'Medium',
       impact: 'High',
-      users: ['Amish', 'Aniket'],
+      users: ['Ramesh', 'Aniket'],
       priorityScore: 85
     },
     {
@@ -295,7 +295,7 @@ export const opportunityAnalysis = {
       marketSize: 'Large',
       effort: 'Medium',
       impact: 'High',
-      users: ['Amish', 'Ramesh', 'Aniket'],
+      users: ['Ramesh', 'Ramesh', 'Aniket'],
       priorityScore: 82
     },
     {
@@ -328,7 +328,7 @@ export const opportunityAnalysis = {
 export const userPersonas = {
   'The Advanced Enthusiast': {
     description: 'Experienced fitness enthusiasts who want comprehensive tools and advanced features. Split into Solo and Social variants.',
-    representatives: ['Ramesh (Social)', 'Amish (Solo)'],
+    representatives: ['Ramesh (Social)', 'Ramesh (Solo)'],
     keyNeeds: {
       shared: ['Advanced tracking', 'Personalization', 'AI recommendations', 'Health data integration'],
       solo: ['Private experience', 'No social features', 'Self-paced', 'Internal motivation'],

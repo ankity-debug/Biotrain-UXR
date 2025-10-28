@@ -92,7 +92,7 @@ const Visualizations = () => {
     },
     {
       quote: "I'd pay $180-240/month for something that actually works",
-      author: "Amish",
+      author: "Ramesh",
       impact: "Critical",
       color: COLORS.chart4
     },

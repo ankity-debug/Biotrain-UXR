@@ -1,7 +1,7 @@
-// Interview 1: Amish - 27M, Dubai, E-commerce, Advanced User
+// Interview 1: Ramesh - 27M, Dubai, E-commerce, Advanced User
 
-export const amishProfile = {
-  name: 'Amish',
+export const rameshProfile = {
+  name: 'Ramesh',
   age: 27,
   gender: 'Male',
   location: 'Dubai',
@@ -21,15 +21,15 @@ export const amishProfile = {
   ]
 }
 
-export const amishInterview = {
-  id: 'amish-001',
+export const rameshInterview = {
+  id: 'ramesh-001',
   date: '2024-01-15',
   duration: '47 minutes',
   interviewer: 'Vidhi Thakker',
   transcript: {
     q1: {
       question: 'Tell me about yourself - name, age, occupation',
-      answer: 'My name is Amish, I am from India, working in Dubai in e-commerce sector. My age is 27.'
+      answer: 'My name is Ramesh, I am from India, working in Dubai in e-commerce sector. My age is 27.'
     },
     q2: {
       question: 'What does your typical day look like?',

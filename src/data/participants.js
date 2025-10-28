@@ -1,5 +1,5 @@
 // Real interview data from actual user research
-import { amishProfile, amishInterview } from './interview1_amish.js'
+import { rameshProfile, rameshInterview } from './interview1_ramesh.js'
 import { aniketProfile, aniketInterview } from './interview2_aniket.js'
 import { majidProfile, majidInterview } from './interview3_majid.js'
 import { jessicaProfile, jessicaInterview } from './interview4_jessica.js'
@@ -10,8 +10,8 @@ import { shubhamProfile, shubhamInterview } from './interview7_shubham.js'
 // Export all participant data
 export const participants = [
   {
-    profile: amishProfile,
-    interview: amishInterview
+    profile: rameshProfile,
+    interview: rameshInterview
   },
   {
     profile: aniketProfile,
@@ -41,8 +41,8 @@ export const participants = [
 
 // Export individual profiles and interviews for easy access
 export {
-  amishProfile,
-  amishInterview,
+  rameshProfile,
+  rameshInterview,
   aniketProfile,
   aniketInterview,
   majidProfile,

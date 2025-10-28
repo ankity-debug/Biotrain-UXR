@@ -1,5 +1,5 @@
-export const amishProfile = {
-  name: 'Amish',
+export const rameshProfile = {
+  name: 'Ramesh',
   age: 27,
   gender: 'Male',
   location: 'Dubai',
@@ -19,8 +19,8 @@ export const amishProfile = {
   ]
 }
 
-export const amishInterview = {
-  id: 'amish-001',
+export const rameshInterview = {
+  id: 'ramesh-001',
   date: '2024-01-15',
   duration: '47 minutes',
   interviewer: 'Vidhi Thakker',
@@ -28,7 +28,7 @@ export const amishInterview = {
 
   // Demographics & Background
   demographics: {
-    name: 'Amish',
+    name: 'Ramesh',
     age: 27,
     gender: 'Male',
     occupation: 'E-commerce sector',

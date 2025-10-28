@@ -53,15 +53,15 @@ export const questionnaire = [
 ]
 
 export const interviewResponses = [
-  // AMISH (Interview 1)
+  // RAMESH (Interview 1)
   {
-    participant: 'Amish',
+    participant: 'Ramesh',
     age: 27,
     gender: 'Male',
     location: 'Dubai',
     userType: 'Advanced',
     responses: {
-      'Q1': 'My name is Amish, I am from India, working in Dubai in e-commerce sector. My age is 27.',
+      'Q1': 'My name is Ramesh, I am from India, working in Dubai in e-commerce sector. My age is 27.',
       'Q2': 'Dubai',
       'Q3': 'I work in e-commerce, follow strict routine. Wake up early, work 8-9 hours, gym 6 days per week 2 hours, meal timing is important but I eat late at 11pm which I want to fix.',
       'Q4': '6-7 years fitness journey. Started in 2018 lockdown when gained 10kg. Lost weight in 1 year by going to gym consistently and following diet.',

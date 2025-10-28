@@ -31,7 +31,7 @@ const QASpreadsheet = () => {
 
   const exportToCSV = () => {
     // Create CSV header
-    let csv = 'Question ID,Category,Journey Stage,Question,Amish (27M Advanced),Aniket (Mid-20sM Intermediate),Majid (Late 20s-30sM Intermediate),Jessica (36F Intermediate),Dr. Dhananjay Kumar (40s-50sM Intermediate),Dhruv (24-25M Power User),Shubham (Late 20s-30sM Power User)\n'
+    let csv = 'Question ID,Category,Journey Stage,Question,Ramesh (27M Advanced),Aniket (Mid-20sM Intermediate),Majid (Late 20s-30sM Intermediate),Jessica (36F Intermediate),Dr. Dhananjay Kumar (40s-50sM Intermediate),Dhruv (24-25M Power User),Shubham (Late 20s-30sM Power User)\n'
 
     // Add each question and responses
     questionnaire.forEach(q => {
