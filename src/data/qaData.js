@@ -315,6 +315,50 @@ export const interviewResponses = [
       'Q32': '₹5000/year ($60/year) if it combines Hevy and HealthifyMe the way I like it with good UI.',
       'Q33': 'ONE integrated app replacing 5+ tools, micronutrient tracking→illness correlation, sleep→diet correlation, culturally relevant meal variety (Indian), simple intuitive UI (CRITICAL), trainer dashboard for clients, both personal and professional features, annual subscription model, advanced data like MRV'
     }
+  },
+
+  // SHUBHAM (Interview 7)
+  {
+    participant: 'Shubham',
+    age: 'Late 20s-Early 30s',
+    gender: 'Male',
+    location: 'Gurgaon, India',
+    userType: 'Power User',
+    responses: {
+      'Q1': 'Shubham, fitness trainer and coach at Fitter, gym owner in Gurgaon',
+      'Q2': 'Gurgaon, India',
+      'Q3': 'Wake early, own gym workout 1.5-2hrs, design client plans, manage gym, Sunday running/sprinting, maintain 10,000+ steps daily',
+      'Q4': 'Working out 8-10 years total, very seriously last 2.5 years after completing diploma in nutrition and fitness',
+      'Q5': 'Initially followed traditional routines, but after diploma learned proper science. Workout is essential for mood - "muscle pump is my addiction, can\'t live even a single day without workout"',
+      'Q6': 'Muscle building, maintain 12% body fat, photoshoot body periodically (1-2 months fat loss cycles)',
+      'Q7': '6 days per week weight training, plus Sunday running/sprinting',
+      'Q8': '25-30 sets for large muscles, 20 sets for smaller muscles, all effective sets training to failure',
+      'Q9': 'Gym 100%. Worked at home during lockdown with 10kg dumbbells using supersets/compound sets but missed equipment, mirrors, music, people, variety. Need gym environment.',
+      'Q10': 'Love working out ALONE in my own gym. A few people motivate but too much crowd is bad - can\'t get equipment. Definitely solo preference.',
+      'Q11': 'Weight training (25-30 sets), running/sprinting on Sundays, 10k+ steps daily',
+      'Q12': 'I AM a trainer/coach at Fitter. Use Fitter for both personal tracking and coaching clients.',
+      'Q13': 'Follow structured diet 24/7, 365 days. Track macros (mainly protein - 2x bodyweight), sometimes fiber. Do blood work every 6 months. Sweet cravings and hunger are big challenges.',
+      'Q14': 'Yes, track macros rigorously. CRITICAL: need RAW ingredient tracking, not "one bowl of dal" because oil content unknown. Use Fitter app, also ChatGPT for food replacements.',
+      'Q15': 'Sweet cravings (see 700 cal cheesecake, can\'t afford it). Hunger management - eat lots of veggies and protein to stay full. Meal prep time - want variety within macros.',
+      'Q16': 'Only protein shake and creatine. No pre-workout, no BCAA, no multivitamins. Supplement based on blood work deficiencies.',
+      'Q17': 'Want variety but time consuming. Use ChatGPT to find replacements (50g paneer = 200g curd = 2 eggs). AI recipe generator from available ingredients would help.',
+      'Q18': 'Yes - Fitter app for pictures/progress tracking, HART smart ring for recovery, iPhone Health app for steps, ChatGPT for nutrition',
+      'Q19': 'HART ring: HRV, resting heart rate, sleep quality, recovery. Check recovery every morning - very accurate (HRV dropped when dehydrated). Steps via Health app synced with ring. Progressive overload: track weight and reps. Progress via pictures and weight.',
+      'Q20': 'Other apps use generic measurements (one bowl). Need RAW ingredients for accuracy. Like Fitter for picture tracking and progress comparison.',
+      'Q21': 'Yes, HART smart ring from Fitter company. Tracks HRV, sleep, recovery. Very accurate. Wish it had Find My Ring feature (lost it multiple times).',
+      'Q22': 'YES - ChatGPT power user. Use for food replacements, body fat estimation from photos (within 2-5% error like other methods). Since ChatGPT, everything is very easy.',
+      'Q23': 'Need accurate raw ingredient tracking. Sweet cravings and hunger. Meal prep time. Want set compensation if miss workout (reschedule missed sets to future days).',
+      'Q24': 'Cannot remember last day I skipped workout. If I skip (rare), I squeeze it into next day or week. Mindset: "I have to complete this many sets this week otherwise no muscle growth."',
+      'Q25': 'Not major issue. Fitness is priority for mood management.',
+      'Q26': 'Not mentioned as major challenge',
+      'Q27': 'YES - I don\'t like notifications. If busy and tracking everything, notifications like "have your meal" or "drink water" are annoying. Personally don\'t want them.',
+      'Q28': 'Muscle pump addiction - essential for good mood. Visible results (pictures week-over-week). Progressive overload numbers. Cannot skip - it\'s my daily routine.',
+      'Q29': 'Highly self-motivated. Don\'t need external. Result/visible progress is best motivator. Week-over-week comparison helpful but no notifications/streaks.',
+      'Q30': 'NO for me. Maybe for others. Healthy competition works with 4-5 friends who joined together, but NOT with unknown people - that\'s not comfortable. Leaderboards not for me.',
+      'Q31': 'Own gym. Previously would have paid for Fitter coaching if knew about it before becoming coach.',
+      'Q32': 'Medium range ($20-50/month) if provides real value. Would have paid for Fitter-quality platform.',
+      'Q33': 'RAW ingredient tracking (CRITICAL), workout set compensation when miss days, AI recipe generator from ingredients, ChatGPT-like food replacements, client management dashboard, recovery tips by soreness type, progress comparison week-over-week, blood work integration, accurate macro tracking, no annoying notifications'
+    }
   }
 ]
 

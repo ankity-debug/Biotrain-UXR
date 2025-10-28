@@ -19,9 +19,9 @@ const ExecutiveSummary = () => {
     invalidated: 3,
     newPersonasIdentified: 4,
     originalPersonas: [
-      { name: 'Ramesh (Advanced)', status: 'replaced', reason: 'Real Advanced user (Amish) has completely different needs - solo vs community' },
-      { name: 'Aniket (Intermediate)', status: 'replaced', reason: 'Real Intermediate users are more diverse - Aniket (traveler), Majid (educated learner), Jessica (female professional)' },
-      { name: 'Majid (Beginner)', status: 'invalidated', reason: 'Real Majid is INTERMEDIATE with 2+ years experience, NOT a beginner' }
+      { name: 'Ramesh (Advanced)', status: 'replaced', reason: 'Replaced with "Power Users & Fitness Professionals" - consolidates Amish, Dhruv, Shubham (43% of sample)' },
+      { name: 'Aniket (Intermediate)', status: 'replaced', reason: 'Split into "Intermediate Enthusiasts" (Aniket, Majid 29%) and "Busy Professionals" (Jessica 14%)' },
+      { name: 'Majid (Beginner)', status: 'invalidated', reason: 'Real data shows Majid is INTERMEDIATE, not beginner. Added "Health-Conscious Experienced Professionals" for 40s-50s+ demographic' }
     ]
   }
 
@@ -31,7 +31,7 @@ const ExecutiveSummary = () => {
       <div className="flex justify-between items-start">
         <div>
           <h1 className="text-4xl font-bold text-foreground">Executive Summary</h1>
-          <p className="text-muted-foreground mt-2 text-lg">BioTrain UX Research Findings - 4 Real User Interviews</p>
+          <p className="text-muted-foreground mt-2 text-lg">BioTrain UX Research Findings - {analyticsData.totalParticipants} Real User Interviews</p>
           <p className="text-sm text-muted-foreground mt-1">Report Generated: {new Date().toLocaleDateString()}</p>
         </div>
         <Button onClick={downloadPDF} className="print:hidden">

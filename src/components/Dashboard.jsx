@@ -98,7 +98,7 @@ const Dashboard = () => {
         <AlertCircle className="h-4 w-4" />
         <AlertTitle>Critical Finding</AlertTitle>
         <AlertDescription>
-          <strong>83% of participants (5/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
+          <strong>86% of participants (6/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
         </AlertDescription>
       </Alert>
 
@@ -372,29 +372,28 @@ const Dashboard = () => {
           <CardDescription>How many participants face each challenge</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {Object.entries(analyticsData.painPointFrequency)
               .sort((a, b) => b[1] - a[1])
               .map(([painPoint, count], idx) => {
-                const percentage = ((count / analyticsData.totalParticipants) * 100).toFixed(0)
+                const percentage = parseFloat(((count / analyticsData.totalParticipants) * 100).toFixed(1))
+                const percentageInt = Math.round(percentage)
                 return (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-medium">{painPoint}</span>
-                        <div className="flex items-center gap-2">
-                          <Badge variant={percentage === '100' ? 'critical' : percentage >= '75' ? 'high' : percentage >= '50' ? 'medium' : 'low'}>
-                            {count}/{analyticsData.totalParticipants}
-                          </Badge>
-                          <span className="text-sm text-muted-foreground">{percentage}%</span>
-                        </div>
+                  <div key={idx} className="space-y-2">
+                    <div className="flex items-start justify-between gap-3 flex-wrap">
+                      <span className="text-sm font-medium flex-1 min-w-[200px]">{painPoint}</span>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <Badge variant={percentageInt === 100 ? 'critical' : percentageInt >= 75 ? 'high' : percentageInt >= 50 ? 'medium' : 'low'}>
+                          {count}/{analyticsData.totalParticipants}
+                        </Badge>
+                        <span className="text-sm text-muted-foreground font-medium w-10 text-right">{percentageInt}%</span>
                       </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <div
-                          className={`h-2 rounded-full transition-all ${percentage === '100' ? 'bg-destructive' : percentage >= '75' ? 'bg-accent' : 'bg-secondary'}`}
-                          style={{ width: `${percentage}%` }}
-                        />
-                      </div>
+                    </div>
+                    <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
+                      <div
+                        className={`h-2.5 rounded-full transition-all duration-300 ${percentageInt === 100 ? 'bg-destructive' : percentageInt >= 75 ? 'bg-accent' : percentageInt >= 50 ? 'bg-primary' : 'bg-secondary'}`}
+                        style={{ width: `${percentage}%` }}
+                      />
                     </div>
                   </div>
                 )
@@ -408,7 +407,7 @@ const Dashboard = () => {
         <CheckCircle2 className="h-4 w-4" />
         <AlertTitle>Dashboard Updated</AlertTitle>
         <AlertDescription>
-          All data now reflects real interviews from {analyticsData.totalParticipants} participants: Amish, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, and Dhruv.
+          All data now reflects real interviews from {analyticsData.totalParticipants} participants: Amish, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, and Shubham.
         </AlertDescription>
       </Alert>
     </div>

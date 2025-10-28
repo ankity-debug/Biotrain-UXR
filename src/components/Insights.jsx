@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { keyInsights, painPointAnalysis, opportunityAnalysis, userPersonas } from '../data/insights.js'
+import { analyticsData, keyInsights, painPointAnalysis, opportunityAnalysis, userPersonas } from '../data/insights.js'
 
 const Insights = () => {
   const getPriorityVariant = (priority) => {
@@ -32,12 +32,12 @@ const Insights = () => {
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-3xl font-bold text-foreground">Research Insights</h2>
-          <p className="text-muted-foreground mt-2">Key findings and actionable insights from 4 user interviews</p>
+          <p className="text-muted-foreground mt-2">Key findings and actionable insights from 7 user interviews</p>
         </div>
         <div className="flex items-center space-x-2">
           <Badge variant="outline" className="text-sm">
             <Lightbulb className="w-4 h-4 mr-1" />
-            {keyInsights.length} Insights
+            Top {keyInsights.length} Insights
           </Badge>
         </div>
       </div>
@@ -62,47 +62,53 @@ const Insights = () => {
               <CardDescription>Critical findings ranked by priority and impact</CardDescription>
             </CardHeader>
             <CardContent>
-              <Accordion type="single" collapsible className="w-full">
-                {keyInsights.map((insight, index) => (
-                  <AccordionItem key={insight.id} value={insight.id}>
-                    <AccordionTrigger className="hover:no-underline">
-                      <div className="flex items-start gap-3 w-full text-left">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-                          <span className="text-sm font-bold text-primary">{index + 1}</span>
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-start justify-between gap-2">
-                            <h4 className="font-semibold text-sm">{insight.title}</h4>
-                            <div className="flex gap-1 flex-shrink-0">
-                              <Badge variant={getPriorityVariant(insight.priority)} className="text-xs">
-                                {insight.priority}
-                              </Badge>
-                              <Badge variant="outline" className="text-xs">
-                                {insight.percentage}
-                              </Badge>
+              {keyInsights && keyInsights.length > 0 ? (
+                <Accordion type="single" collapsible className="w-full">
+                  {keyInsights.map((insight, index) => (
+                    <AccordionItem key={insight.id} value={insight.id}>
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex items-start gap-3 w-full text-left">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                            <span className="text-sm font-bold text-primary">{index + 1}</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between gap-2 flex-wrap">
+                              <h4 className="font-semibold text-sm break-words flex-1 min-w-0">{insight.title}</h4>
+                              <div className="flex gap-1 flex-shrink-0">
+                                <Badge variant={getPriorityVariant(insight.priority)} className="text-xs">
+                                  {insight.priority}
+                                </Badge>
+                                <Badge variant="outline" className="text-xs">
+                                  {insight.percentage}
+                                </Badge>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="pl-11 space-y-3">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {insight.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          <Badge variant="secondary">
-                            <Users className="w-3 h-3 mr-1" />
-                            {insight.affectedUsers} users affected
-                          </Badge>
-                          <Badge variant="outline">{insight.category}</Badge>
-                          <Badge variant="outline">{insight.impact} Impact</Badge>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="pl-11 space-y-3">
+                          <p className="text-sm text-muted-foreground leading-relaxed break-words">
+                            {insight.description}
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            <Badge variant="secondary">
+                              <Users className="w-3 h-3 mr-1" />
+                              {insight.affectedUsers} users affected
+                            </Badge>
+                            <Badge variant="outline">{insight.category}</Badge>
+                            <Badge variant="outline">{insight.impact} Impact</Badge>
+                          </div>
                         </div>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No insights available</p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </TabsContent>
@@ -120,55 +126,59 @@ const Insights = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {painPointAnalysis.topPainPoints.map((painPoint, index) => (
-                <Card key={index} className="border-l-4 border-l-red-500">
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        {getSeverityIcon(painPoint.severity)}
-                      </div>
-                      <div className="flex-1 space-y-3">
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="space-y-1">
-                            <h4 className="font-semibold text-base">{painPoint.painPoint}</h4>
-                            <p className="text-sm text-muted-foreground">
-                              Affects: <span className="font-medium">{painPoint.users.join(', ')}</span>
-                            </p>
-                          </div>
-                          <div className="flex gap-2 flex-shrink-0">
-                            <Badge variant={getPriorityVariant(painPoint.severity)}>
-                              {painPoint.severity}
-                            </Badge>
-                            <Badge variant="outline">
-                              {painPoint.percentage}
-                            </Badge>
-                          </div>
+              {painPointAnalysis.topPainPoints.map((painPoint, index) => {
+                const percentage = parseFloat(((painPoint.frequency / analyticsData.totalParticipants) * 100).toFixed(1))
+                return (
+                  <Card key={index} className="border-l-4 border-l-red-500">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          {getSeverityIcon(painPoint.severity)}
                         </div>
-
-                        <div className="flex items-center gap-4">
-                          <div className="flex-1 bg-gray-200 rounded-full h-2">
-                            <div
-                              className={`h-2 rounded-full ${
-                                painPoint.frequency === 4 ? 'bg-red-600' :
-                                painPoint.frequency >= 3 ? 'bg-orange-500' :
-                                'bg-yellow-500'
-                              }`}
-                              style={{ width: `${(painPoint.frequency / 4) * 100}%` }}
-                            />
+                        <div className="flex-1 min-w-0 space-y-3">
+                          <div className="flex items-start justify-between gap-4 flex-wrap">
+                            <div className="space-y-1 flex-1 min-w-0">
+                              <h4 className="font-semibold text-base break-words">{painPoint.painPoint}</h4>
+                              <p className="text-sm text-muted-foreground break-words">
+                                Affects: <span className="font-medium">{painPoint.users.join(', ')}</span>
+                              </p>
+                            </div>
+                            <div className="flex gap-2 flex-shrink-0">
+                              <Badge variant={getPriorityVariant(painPoint.severity)}>
+                                {painPoint.severity}
+                              </Badge>
+                              <Badge variant="outline">
+                                {painPoint.percentage}
+                              </Badge>
+                            </div>
                           </div>
-                          <span className="text-sm font-medium text-muted-foreground">
-                            {painPoint.frequency}/4 users
-                          </span>
-                        </div>
 
-                        <Badge variant="secondary" className="w-fit">
-                          {painPoint.journeyStage} Stage
-                        </Badge>
+                          <div className="flex items-center gap-3 w-full">
+                            <div className="flex-1 bg-gray-200 rounded-full h-2.5 overflow-hidden min-w-0">
+                              <div
+                                className={`h-2.5 rounded-full transition-all duration-300 ${
+                                  percentage >= 80 ? 'bg-red-600' :
+                                  percentage >= 60 ? 'bg-orange-500' :
+                                  percentage >= 40 ? 'bg-yellow-500' :
+                                  'bg-blue-500'
+                                }`}
+                                style={{ width: `${percentage}%` }}
+                              />
+                            </div>
+                            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap flex-shrink-0">
+                              {painPoint.frequency}/{analyticsData.totalParticipants} users
+                            </span>
+                          </div>
+
+                          <Badge variant="secondary" className="w-fit">
+                            {painPoint.journeyStage} Stage
+                          </Badge>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </CardContent>
           </Card>
         </TabsContent>

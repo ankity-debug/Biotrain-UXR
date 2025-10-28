@@ -5,6 +5,7 @@ import { majidProfile, majidInterview } from './interview3_majid.js'
 import { jessicaProfile, jessicaInterview } from './interview4_jessica.js'
 import { dhananjayProfile, dhananjayInterview } from './interview5_dhananjay.js'
 import { dhruvProfile, dhruvInterview } from './interview6_dhruv.js'
+import { shubhamProfile, shubhamInterview } from './interview7_shubham.js'
 
 // Export all participant data
 export const participants = [
@@ -31,6 +32,10 @@ export const participants = [
   {
     profile: dhruvProfile,
     interview: dhruvInterview
+  },
+  {
+    profile: shubhamProfile,
+    interview: shubhamInterview
   }
 ]
 
@@ -47,7 +52,9 @@ export {
   dhananjayProfile,
   dhananjayInterview,
   dhruvProfile,
-  dhruvInterview
+  dhruvInterview,
+  shubhamProfile,
+  shubhamInterview
 }
 
 // Helper functions for data analysis
