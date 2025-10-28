@@ -4,6 +4,7 @@ import QASpreadsheet from './components/QASpreadsheet'
 import Insights from './components/Insights'
 import FeaturePriorityMatrix from './components/FeaturePriorityMatrix'
 import ExecutiveSummary from './components/ExecutiveSummary'
+import Visualizations from './components/Visualizations'
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -11,6 +12,7 @@ function App() {
   const tabs = [
     { id: 'executive-summary', label: 'Executive Summary', icon: '📑' },
     { id: 'dashboard', label: 'Dashboard', icon: '📊' },
+    { id: 'visualizations', label: 'Dive Deep (Graphs)', icon: '📈' },
     { id: 'participants', label: 'Participants & Q&A', icon: '👥' },
     { id: 'insights', label: 'Insights', icon: '💡' },
     { id: 'priority-matrix', label: 'Priority Matrix', icon: '🎯' }
@@ -61,6 +63,7 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === 'executive-summary' && <ExecutiveSummary />}
         {activeTab === 'dashboard' && <Dashboard />}
+        {activeTab === 'visualizations' && <Visualizations />}
         {activeTab === 'participants' && <QASpreadsheet />}
         {activeTab === 'insights' && <Insights />}
         {activeTab === 'priority-matrix' && <FeaturePriorityMatrix />}

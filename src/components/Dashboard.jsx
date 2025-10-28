@@ -1,83 +1,92 @@
 import React from 'react'
-import { User, Activity, TrendingUp, Target, Users, DollarSign, Smartphone, Brain, AlertCircle, CheckCircle2 } from 'lucide-react'
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { User, Activity, TrendingUp, Target, Users, DollarSign, Smartphone, Brain, AlertCircle, CheckCircle2, Zap } from 'lucide-react'
+import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { analyticsData, keyInsights, painPointAnalysis } from '../data/insights.js'
+import { analyticsData, keyInsights } from '../data/insights.js'
 
 const Dashboard = () => {
-  // Prepare data for charts
-  const userTypeData = Object.entries(analyticsData.userTypes).map(([name, value]) => ({
-    name,
-    value,
-    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-  }))
-
-  const genderData = Object.entries(analyticsData.gender).map(([name, value]) => ({
-    name,
-    value,
-    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-  }))
-
-  const fitnessLevelData = Object.entries(analyticsData.fitnessLevels).map(([name, value]) => ({
-    name,
-    value,
-    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-  }))
-
-  const budgetData = Object.entries(analyticsData.budgets).map(([name, value]) => ({
-    name: name.length > 20 ? name.substring(0, 20) + '...' : name,
-    fullName: name,
-    value,
-    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-  }))
-
-  const techAdoptionData = Object.entries(analyticsData.techAdoption).map(([name, value]) => ({
-    name,
-    value,
-    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-  }))
-
-  const topGoalsData = Object.entries(analyticsData.commonGoals)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 6)
-    .map(([name, value]) => ({
-      name,
-      value,
-      percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-    }))
-
-  const topChallengesData = Object.entries(analyticsData.commonChallenges)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 6)
-    .map(([name, value]) => ({
-      name,
-      value,
-      percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0)
-    }))
-
-  // Use Soft Pop theme colors
+  // Soft Pop theme colors - using actual color values for Recharts
   const COLORS = {
-    primary: 'oklch(0.5106 0.2301 276.9656)', // Purple
-    secondary: 'oklch(0.7038 0.1230 182.5025)', // Cyan
-    accent: 'oklch(0.7686 0.1647 70.0804)', // Lime
-    destructive: 'oklch(0.6368 0.2078 25.3313)', // Red
-    chart1: 'oklch(0.5106 0.2301 276.9656)', // Primary purple
-    chart2: 'oklch(0.7038 0.1230 182.5025)', // Secondary cyan
-    chart3: 'oklch(0.7686 0.1647 70.0804)', // Accent lime
-    chart4: 'oklch(0.6559 0.2118 354.3084)', // Pink
-    chart5: 'oklch(0.7227 0.1920 149.5793)'  // Teal
+    chart1: '#818cf8', // Purple - oklch(0.5106 0.2301 276.9656)
+    chart2: '#22d3ee', // Teal - oklch(0.7038 0.1230 182.5025)
+    chart3: '#fde047', // Yellow - oklch(0.7686 0.1647 70.0804)
+    chart4: '#fb7185', // Pink - oklch(0.6559 0.2118 354.3084)
+    chart5: '#34d399', // Green - oklch(0.7227 0.1920 149.5793)
   }
 
-  const PIE_COLORS = [
-    'oklch(0.5106 0.2301 276.9656)', // Primary purple
-    'oklch(0.7038 0.1230 182.5025)', // Secondary cyan
-    'oklch(0.7686 0.1647 70.0804)', // Accent lime
-    'oklch(0.6559 0.2118 354.3084)', // Pink
-    'oklch(0.7227 0.1920 149.5793)', // Teal
-    'oklch(0.6801 0.1583 276.9349)'  // Light purple
-  ]
+  // 1. USER TYPES - Donut chart (3 segments, works well)
+  const userTypeData = Object.entries(analyticsData.userTypes).map(([name, value], index) => ({
+    name,
+    value,
+    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0),
+    fill: [COLORS.chart1, COLORS.chart2, COLORS.chart3][index]
+  }))
+
+  // 2. FITNESS LEVELS - Horizontal bar (better than pie for multiple items)
+  const fitnessLevelData = Object.entries(analyticsData.fitnessLevels)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, value], index) => ({
+      name,
+      value,
+      percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0),
+      color: [COLORS.chart1, COLORS.chart2, COLORS.chart5, COLORS.chart3][index]
+    }))
+
+  // 3. TOP GOALS - Horizontal bar with colors
+  const topGoalsData = Object.entries(analyticsData.commonGoals)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([name, value], index) => ({
+      name: name.length > 25 ? name.substring(0, 25) + '...' : name,
+      value,
+      percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0),
+      color: [COLORS.chart2, COLORS.chart1, COLORS.chart5, COLORS.chart3, COLORS.chart4][index]
+    }))
+
+  // 4. TOP CHALLENGES - Horizontal bar with red/pink tones
+  const topChallengesData = Object.entries(analyticsData.commonChallenges)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([name, value], index) => ({
+      name: name.length > 30 ? name.substring(0, 30) + '...' : name,
+      fullName: name,
+      value,
+      percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0),
+      color: index === 0 ? COLORS.chart4 : index === 1 ? COLORS.chart1 : COLORS.chart2
+    }))
+
+  // 5. BUDGET/PRICING - Simplified categories
+  const budgetSimplified = [
+    { name: 'Free', value: analyticsData.budgets['Would pay $0 (free only)'] || 0 },
+    { name: 'Low ($2-5)', value: (analyticsData.budgets['Low ($2.50-10/month)'] || 0) },
+    { name: 'Medium ($20-50)', value: (analyticsData.budgets['Medium ($20-50/month)'] || 0) + (analyticsData.budgets['Medium ($60/year = $5/month)'] || 0) },
+    { name: 'High ($100+)', value: (analyticsData.budgets['High ($100-250/month - Elite tier)'] || 0) + (analyticsData.budgets['Premium (AED 180-240/month)'] || 0) }
+  ].map((item, index) => ({
+    ...item,
+    color: [COLORS.chart5, COLORS.chart2, COLORS.chart1, COLORS.chart4][index]
+  }))
+
+  // 6. TECH ADOPTION - Simple vertical bars
+  const techAdoptionData = Object.entries(analyticsData.techAdoption).map(([name, value], index) => ({
+    name,
+    value,
+    percentage: ((value / analyticsData.totalParticipants) * 100).toFixed(0),
+    color: [COLORS.chart1, COLORS.chart5][index]
+  }))
+
+  // 7. PAIN POINTS - Top 6 as horizontal bars
+  const painPointsData = Object.entries(analyticsData.painPointFrequency)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+    .map(([painPoint, count], index) => ({
+      name: painPoint.length > 40 ? painPoint.substring(0, 40) + '...' : painPoint,
+      fullName: painPoint,
+      value: count,
+      percentage: parseFloat(((count / analyticsData.totalParticipants) * 100).toFixed(1)),
+      color: index === 0 ? COLORS.chart4 : index === 1 ? COLORS.chart1 : index === 2 ? COLORS.chart3 : COLORS.chart2
+    }))
 
   return (
     <div className="space-y-6">
@@ -94,8 +103,8 @@ const Dashboard = () => {
       </div>
 
       {/* Critical Alert */}
-      <Alert variant="destructive">
-        <AlertCircle className="h-4 w-4" />
+      <Alert className="border-l-4" style={{ borderLeftColor: COLORS.chart4 }}>
+        <AlertCircle className="h-4 w-4" style={{ color: COLORS.chart4 }} />
         <AlertTitle>Critical Finding</AlertTitle>
         <AlertDescription>
           <strong>86% of participants (6/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
@@ -104,49 +113,49 @@ const Dashboard = () => {
 
       {/* Key Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
+        <Card className="shadow-sm hover:shadow-md transition-shadow border-t-4" style={{ borderTopColor: COLORS.chart1 }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Participants</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4" style={{ color: COLORS.chart1 }} />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{analyticsData.totalParticipants}</div>
-            <p className="text-xs text-muted-foreground">Real user interviews conducted</p>
+            <div className="text-3xl font-bold">{analyticsData.totalParticipants}</div>
+            <p className="text-xs text-muted-foreground mt-1">Real user interviews</p>
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
+        <Card className="shadow-sm hover:shadow-md transition-shadow border-t-4" style={{ borderTopColor: COLORS.chart2 }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">User Types</CardTitle>
-            <User className="h-4 w-4 text-muted-foreground" />
+            <User className="h-4 w-4" style={{ color: COLORS.chart2 }} />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{Object.keys(analyticsData.userTypes).length}</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="text-3xl font-bold">{Object.keys(analyticsData.userTypes).length}</div>
+            <p className="text-xs text-muted-foreground mt-1">
               {analyticsData.userTypes.Advanced || 0} Advanced, {analyticsData.userTypes.Intermediate || 0} Intermediate, {analyticsData.userTypes['Power User'] || 0} Power
             </p>
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
+        <Card className="shadow-sm hover:shadow-md transition-shadow border-t-4" style={{ borderTopColor: COLORS.chart3 }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Gender Split</CardTitle>
-            <Activity className="h-4 w-4 text-muted-foreground" />
+            <Activity className="h-4 w-4" style={{ color: COLORS.chart3 }} />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{analyticsData.gender.Male}M / {analyticsData.gender.Female}F</div>
-            <p className="text-xs text-muted-foreground">Male and Female participants</p>
+            <div className="text-3xl font-bold">{analyticsData.gender.Male}M / {analyticsData.gender.Female}F</div>
+            <p className="text-xs text-muted-foreground mt-1">Male and Female participants</p>
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
+        <Card className="shadow-sm hover:shadow-md transition-shadow border-t-4" style={{ borderTopColor: COLORS.chart4 }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Price Range</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <DollarSign className="h-4 w-4" style={{ color: COLORS.chart4 }} />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">60-96x</div>
-            <p className="text-xs text-muted-foreground">$2.50 to $240/month WTP variance</p>
+            <div className="text-3xl font-bold">60-96x</div>
+            <p className="text-xs text-muted-foreground mt-1">$2.50 to $240/month WTP</p>
           </CardContent>
         </Card>
       </div>
@@ -155,259 +164,453 @@ const Dashboard = () => {
       <Card className="shadow-sm hover:shadow-md transition-shadow">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5" />
+            <TrendingUp className="h-5 w-5" style={{ color: COLORS.chart1 }} />
             Top 3 Critical Insights
           </CardTitle>
           <CardDescription>Highest priority findings from interviews</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
-          {keyInsights.slice(0, 3).map((insight, idx) => (
-            <div key={insight.id} className="flex items-start gap-4 p-4 rounded-lg border bg-card">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-primary font-bold">{idx + 1}</span>
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <h4 className="font-semibold text-sm">{insight.title}</h4>
-                  <Badge variant={insight.priority?.toLowerCase() === 'critical' ? 'critical' : insight.priority?.toLowerCase() === 'high' ? 'high' : insight.priority?.toLowerCase() === 'medium' ? 'medium' : 'low'}>
-                    {insight.priority}
-                  </Badge>
-                  <Badge variant="outline">{insight.percentage}</Badge>
+        <CardContent className="space-y-3">
+          {keyInsights.slice(0, 3).map((insight, idx) => {
+            const colors = [COLORS.chart4, COLORS.chart1, COLORS.chart2]
+            return (
+              <div 
+                key={insight.id} 
+                className="flex items-start gap-4 p-4 rounded-lg border-l-4 bg-gradient-to-r from-card to-transparent hover:shadow-md transition-all"
+                style={{ borderLeftColor: colors[idx] }}
+              >
+                <div 
+                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                  style={{ backgroundColor: colors[idx] }}
+                >
+                  {idx + 1}
                 </div>
-                <p className="text-sm text-muted-foreground">{insight.description}</p>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <h4 className="font-semibold text-sm">{insight.title}</h4>
+                    <Badge 
+                      variant="outline"
+                      style={{ borderColor: colors[idx], color: colors[idx] }}
+                    >
+                      {insight.percentage}
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{insight.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </CardContent>
       </Card>
 
-      {/* Demographics Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* User Types */}
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle>User Types</CardTitle>
-            <CardDescription>Experience level distribution</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={200}>
-              <PieChart>
-                <Pie
-                  data={userTypeData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={({ name, percentage }) => `${name} ${percentage}%`}
-                  outerRadius={70}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {userTypeData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-
-        {/* Gender Distribution */}
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle>Gender Distribution</CardTitle>
-            <CardDescription>Participant demographics</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={200}>
-              <PieChart>
-                <Pie
-                  data={genderData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={({ name, percentage }) => `${name} ${percentage}%`}
-                  outerRadius={70}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {genderData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-
-        {/* Fitness Levels */}
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle>Fitness Levels</CardTitle>
-            <CardDescription>Activity frequency</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={200}>
-              <PieChart>
-                <Pie
-                  data={fitnessLevelData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={({ name, percentage }) => `${name} ${percentage}%`}
-                  outerRadius={70}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {fitnessLevelData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Goals and Challenges */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Top Goals */}
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle>Top Fitness Goals</CardTitle>
-            <CardDescription>Most common participant goals</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={topGoalsData} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" />
-                <YAxis dataKey="name" type="category" width={120} />
-                <Tooltip />
-                <Bar dataKey="value" fill={COLORS.secondary} radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-
-        {/* Top Challenges */}
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle>Top Challenges</CardTitle>
-            <CardDescription>Most frequent pain points</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={topChallengesData} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" />
-                <YAxis dataKey="name" type="category" width={150} />
-                <Tooltip />
-                <Bar dataKey="value" fill={COLORS.destructive} radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Budget and Tech Adoption */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Budget Distribution */}
-        <Card className="shadow-sm hover:shadow-md transition-shadow">
-          <CardHeader>
-            <CardTitle>Willingness to Pay</CardTitle>
-            <CardDescription>Monthly budget distribution</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={budgetData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} />
-                <YAxis />
-                <Tooltip content={({ active, payload }) => {
+      {/* Pain Points - Most Important */}
+      <Card className="shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="flex items-center gap-2">
+                <Target className="h-5 w-5" style={{ color: COLORS.chart4 }} />
+                Top Pain Points
+              </CardTitle>
+              <CardDescription className="mt-1">What frustrates users most - ranked by frequency</CardDescription>
+            </div>
+            <Badge style={{ backgroundColor: COLORS.chart4, color: 'white' }}>
+              Critical Priority
+            </Badge>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart data={painPointsData} layout="vertical" margin={{ top: 5, right: 80, left: 180, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={true} vertical={false} />
+              <XAxis 
+                type="number" 
+                domain={[0, 7]}
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fontSize: 11 }}
+              />
+              <YAxis 
+                dataKey="name" 
+                type="category" 
+                width={170}
+                tick={{ fontSize: 11 }}
+                stroke="hsl(var(--muted-foreground))"
+              />
+              <Tooltip
+                content={({ active, payload }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-white p-3 border rounded-lg shadow-lg">
-                        <p className="font-semibold">{payload[0].payload.fullName}</p>
-                        <p className="text-sm text-muted-foreground">
-                          {payload[0].value} participant{payload[0].value > 1 ? 's' : ''} ({payload[0].payload.percentage}%)
+                      <div className="bg-card p-3 rounded-lg border shadow-lg">
+                        <p className="font-semibold text-sm">{payload[0].payload.fullName}</p>
+                        <p className="text-sm mt-1">
+                          <span style={{ color: payload[0].payload.color }}>●</span> {payload[0].value}/7 users ({payload[0].payload.percentage}%)
                         </p>
                       </div>
                     )
                   }
                   return null
-                }} />
-                <Bar dataKey="value" fill={COLORS.accent} radius={[4, 4, 0, 0]} />
+                }}
+                cursor={{ fill: 'hsl(var(--muted))' }}
+              />
+              <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+                {painPointsData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </CardContent>
+        <CardFooter>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <AlertCircle className="h-4 w-4" />
+            <span>Nutrition tracking affects 86% of users - highest priority opportunity</span>
+          </div>
+        </CardFooter>
+      </Card>
+
+      {/* User Distribution: User Types + Fitness Levels */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        {/* User Types - Donut Chart */}
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <User className="h-5 w-5" style={{ color: COLORS.chart1 }} />
+              User Types
+            </CardTitle>
+            <CardDescription>Experience level distribution</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={240}>
+              <PieChart>
+                <Pie
+                  data={userTypeData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={90}
+                  paddingAngle={2}
+                  dataKey="value"
+                >
+                  {userTypeData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                  ))}
+                </Pie>
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-card p-3 rounded-lg border shadow-lg">
+                          <p className="font-semibold text-sm">{payload[0].payload.name}</p>
+                          <p className="text-sm" style={{ color: payload[0].payload.fill }}>
+                            {payload[0].value} users ({payload[0].payload.percentage}%)
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+              </PieChart>
+            </ResponsiveContainer>
+          </CardContent>
+          <CardFooter>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Zap className="h-4 w-4" />
+              <span>57% Intermediate, 29% Power Users, 14% Advanced</span>
+            </div>
+          </CardFooter>
+        </Card>
+
+        {/* Fitness Levels - Horizontal Bar */}
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Activity className="h-5 w-5" style={{ color: COLORS.chart2 }} />
+              Fitness Levels
+            </CardTitle>
+            <CardDescription>Activity frequency distribution</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart data={fitnessLevelData} layout="vertical" margin={{ top: 5, right: 30, left: 100, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={false} />
+                <XAxis 
+                  type="number" 
+                  domain={[0, 4]}
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <YAxis 
+                  dataKey="name" 
+                  type="category" 
+                  width={90}
+                  tick={{ fontSize: 11 }}
+                  stroke="hsl(var(--muted-foreground))"
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-card p-3 rounded-lg border shadow-lg">
+                          <p className="font-semibold text-sm">{payload[0].payload.name}</p>
+                          <p className="text-sm" style={{ color: payload[0].payload.color }}>
+                            {payload[0].value} users ({payload[0].payload.percentage}%)
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+                  {fitnessLevelData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
+          <CardFooter>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <TrendingUp className="h-4 w-4" />
+              <span>43% Very High, 43% High fitness levels</span>
+            </div>
+          </CardFooter>
+        </Card>
+      </div>
+
+      {/* Goals and Challenges */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        {/* Top Goals */}
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Target className="h-5 w-5" style={{ color: COLORS.chart2 }} />
+              Top Fitness Goals
+            </CardTitle>
+            <CardDescription>Most common participant goals</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={topGoalsData} layout="vertical" margin={{ top: 5, right: 30, left: 140, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={false} />
+                <XAxis 
+                  type="number" 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <YAxis 
+                  dataKey="name" 
+                  type="category" 
+                  width={130}
+                  tick={{ fontSize: 11 }}
+                  stroke="hsl(var(--muted-foreground))"
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-card p-3 rounded-lg border shadow-lg">
+                          <p className="font-semibold text-sm">{payload[0].payload.name}</p>
+                          <p className="text-sm" style={{ color: payload[0].payload.color }}>
+                            {payload[0].value} users ({payload[0].payload.percentage}%)
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+                  {topGoalsData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+          <CardFooter>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <CheckCircle2 className="h-4 w-4" />
+              <span>Weight loss & muscle building are top priorities</span>
+            </div>
+          </CardFooter>
+        </Card>
+
+        {/* Top Challenges */}
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <AlertCircle className="h-5 w-5" style={{ color: COLORS.chart4 }} />
+              Top Challenges
+            </CardTitle>
+            <CardDescription>Most frequent pain points</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={topChallengesData} layout="vertical" margin={{ top: 5, right: 30, left: 160, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={false} />
+                <XAxis 
+                  type="number" 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <YAxis 
+                  dataKey="name" 
+                  type="category" 
+                  width={150}
+                  tick={{ fontSize: 11 }}
+                  stroke="hsl(var(--muted-foreground))"
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-card p-3 rounded-lg border shadow-lg">
+                          <p className="font-semibold text-sm">{payload[0].payload.fullName}</p>
+                          <p className="text-sm" style={{ color: payload[0].payload.color }}>
+                            {payload[0].value} users ({payload[0].payload.percentage}%)
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+                  {topChallengesData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+          <CardFooter>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <AlertCircle className="h-4 w-4" />
+              <span>Consistency & time management are key blockers</span>
+            </div>
+          </CardFooter>
+        </Card>
+      </div>
+
+      {/* Budget and Tech Adoption */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        {/* Budget Distribution */}
+        <Card className="shadow-sm hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <DollarSign className="h-5 w-5" style={{ color: COLORS.chart5 }} />
+              Willingness to Pay
+            </CardTitle>
+            <CardDescription>Monthly budget distribution</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart data={budgetSimplified}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+                <XAxis 
+                  dataKey="name" 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <YAxis 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-card p-3 rounded-lg border shadow-lg">
+                          <p className="font-semibold text-sm">{payload[0].payload.name}/month</p>
+                          <p className="text-sm" style={{ color: payload[0].payload.color }}>
+                            {payload[0].value} user{payload[0].value !== 1 ? 's' : ''}
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                  {budgetSimplified.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+          <CardFooter>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <TrendingUp className="h-4 w-4" />
+              <span>43% willing to pay medium-high tiers ($20-50+)</span>
+            </div>
+          </CardFooter>
         </Card>
 
         {/* Tech Adoption */}
         <Card className="shadow-sm hover:shadow-md transition-shadow">
           <CardHeader>
-            <CardTitle>Tech Adoption</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <Brain className="h-5 w-5" style={{ color: COLORS.chart1 }} />
+              Tech Adoption
+            </CardTitle>
             <CardDescription>Technology comfort level</CardDescription>
           </CardHeader>
           <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={240}>
               <BarChart data={techAdoptionData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="value" fill={COLORS.primary} radius={[4, 4, 0, 0]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+                <XAxis 
+                  dataKey="name" 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <YAxis 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 11 }}
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-card p-3 rounded-lg border shadow-lg">
+                          <p className="font-semibold text-sm">{payload[0].payload.name}</p>
+                          <p className="text-sm" style={{ color: payload[0].payload.color }}>
+                            {payload[0].value} users ({payload[0].payload.percentage}%)
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                  {techAdoptionData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
+          <CardFooter>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Smartphone className="h-4 w-4" />
+              <span>86% high tech adoption - ready for smart features</span>
+            </div>
+          </CardFooter>
         </Card>
       </div>
 
-      {/* Pain Point Frequency */}
-      <Card className="shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Pain Point Frequency</CardTitle>
-          <CardDescription>How many participants face each challenge</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {Object.entries(analyticsData.painPointFrequency)
-              .sort((a, b) => b[1] - a[1])
-              .map(([painPoint, count], idx) => {
-                const percentage = parseFloat(((count / analyticsData.totalParticipants) * 100).toFixed(1))
-                const percentageInt = Math.round(percentage)
-                return (
-                  <div key={idx} className="space-y-2">
-                    <div className="flex items-start justify-between gap-3 flex-wrap">
-                      <span className="text-sm font-medium flex-1 min-w-[200px]">{painPoint}</span>
-                      <div className="flex items-center gap-2 flex-shrink-0">
-                        <Badge variant={percentageInt === 100 ? 'critical' : percentageInt >= 75 ? 'high' : percentageInt >= 50 ? 'medium' : 'low'}>
-                          {count}/{analyticsData.totalParticipants}
-                        </Badge>
-                        <span className="text-sm text-muted-foreground font-medium w-10 text-right">{percentageInt}%</span>
-                      </div>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
-                      <div
-                        className={`h-2.5 rounded-full transition-all duration-300 ${percentageInt === 100 ? 'bg-destructive' : percentageInt >= 75 ? 'bg-accent' : percentageInt >= 50 ? 'bg-primary' : 'bg-secondary'}`}
-                        style={{ width: `${percentage}%` }}
-                      />
-                    </div>
-                  </div>
-                )
-              })}
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Success Alert */}
-      <Alert>
-        <CheckCircle2 className="h-4 w-4" />
+      <Alert className="border-l-4" style={{ borderLeftColor: COLORS.chart5 }}>
+        <CheckCircle2 className="h-4 w-4" style={{ color: COLORS.chart5 }} />
         <AlertTitle>Dashboard Updated</AlertTitle>
         <AlertDescription>
-          All data now reflects real interviews from {analyticsData.totalParticipants} participants: Amish, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, and Shubham.
+          All data reflects real interviews from {analyticsData.totalParticipants} participants: Amish, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, and Shubham.
         </AlertDescription>
       </Alert>
     </div>
