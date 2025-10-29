@@ -1,41 +1,45 @@
-// Analytics and insights from 7 real user interviews
+// Analytics and insights from 9 real user interviews
 
 export const analyticsData = {
-  totalParticipants: 7,
+  totalParticipants: 9,
 
   userTypes: {
-    'Advanced': 1,  // Ramesh
+    'Advanced': 2,  // Ramesh, Praneeth (recovering from advanced)
     'Intermediate': 4,  // Aniket, Majid, Jessica, Dhananjay
-    'Power User': 2  // Dhruv (fitness professional), Shubham (trainer/coach)
+    'Power User': 2,  // Dhruv (fitness professional), Shubham (trainer/coach)
+    'Beginner': 1  // Reyena
   },
 
   gender: {
-    'Male': 6,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham
-    'Female': 1  // Jessica
+    'Male': 7,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham, Praneeth
+    'Female': 2  // Jessica, Reyena
   },
 
   fitnessLevels: {
     'Very High': 2,  // Dhruv (8-15 workouts/month, professional), Shubham (6 days, 25-30 sets, trainer)
     'High': 1,  // Ramesh (6 days, 2hrs)
-    'Medium': 4  // Aniket (4 days), Majid (3-4 days), Jessica (3-4 days), Dhananjay (2-3 days + swimming)
+    'Medium': 4,  // Aniket (4 days), Majid (3-4 days), Jessica (3-4 days), Dhananjay (2-3 days + swimming)
+    'Low': 1,  // Praneeth (yoga, meditation, light cardio - recovery mode)
+    'Beginner': 1  // Reyena (7k steps daily, no structured routine)
   },
 
   budgets: {
     'Very High ($180-240/month)': 1,  // Ramesh
     'Medium-High': 1,  // Dhananjay (with GDPR privacy requirements)
-    'Medium': 3,  // Majid, Jessica, Shubham (would pay for value)
+    'Medium': 4,  // Majid, Jessica, Shubham (would pay for value), Praneeth
     'Low-Medium ($60/year)': 1,  // Dhruv
-    'Medium-Low ($2.50-4/month)': 1  // Aniket
+    'Medium-Low ($2.50-4/month)': 1,  // Aniket
+    'Low': 1  // Reyena (budget-conscious homemaker)
   },
 
   techAdoption: {
-    'Very High': 3,  // Ramesh (ChatGPT power user), Dhruv (5+ apps, Whoop, understands HRV), Shubham (ChatGPT, smart ring)
+    'Very High': 4,  // Ramesh (ChatGPT power user), Dhruv (5+ apps, Whoop, understands HRV), Shubham (ChatGPT, smart ring), Praneeth (UX strategist, ChatGPT user)
     'Medium-High': 2,  // Aniket, Jessica (Apple Watch)
-    'Medium': 2  // Majid, Dhananjay (Fitbit, cautious about AI)
+    'Medium': 3  // Majid, Dhananjay (Fitbit, cautious about AI), Reyena (uses step tracker app)
   },
 
   commonGoals: {
-    'Weight Loss': 2,  // Jessica, Dhruv (25%→20% body fat)
+    'Weight Loss': 3,  // Jessica, Dhruv (25%→20% body fat), Reyena
     'Weight Gain': 1,  // Aniket
     'Weight Maintenance': 3,  // Ramesh, Dhananjay (prevent degeneration), Shubham (12% body fat)
     'Muscle Building': 5,  // Ramesh, Aniket, Majid, Dhruv, Shubham
@@ -45,67 +49,84 @@ export const analyticsData = {
     'Performance (Strength PRs)': 1,  // Dhruv
     'Prevent Degeneration': 1,  // Dhananjay
     'Manage Chronic Conditions': 1,  // Dhananjay (back pain)
-    'Body Fat Control': 1  // Shubham (maintain 12%, photoshoot body)
+    'Body Fat Control': 1,  // Shubham (maintain 12%, photoshoot body)
+    'Mental Wellness': 1,  // Praneeth (primary focus)
+    'Holistic Health': 1,  // Praneeth (mental + physical + nutritional)
+    'Recovery': 1,  // Praneeth (from health crisis)
+    'Consistency': 1  // Reyena (building sustainable routine)
   },
 
   commonChallenges: {
-    'Nutrition Tracking': 6,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Shubham (needs raw ingredients)
-    'App Fragmentation': 2,  // Ramesh, Dhruv (5+ apps each)
+    'Nutrition Tracking': 7,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Shubham, Reyena (calorie tracking)
+    'App Fragmentation': 3,  // Ramesh, Dhruv (5+ apps each), Praneeth (tried many, none stuck)
     'Work Stress': 2,  // Majid (9-10hr), Jessica (teaching)
     'Travel Disruption': 2,  // Ramesh, Aniket
     'Meal Prep Time': 3,  // Ramesh, Jessica, Shubham
-    'Time Constraints': 5,  // Ramesh, Aniket, Majid, Jessica, Dhruv
-    'Notification Fatigue': 5,  // Ramesh, Aniket, Jessica, Dhruv, Shubham
+    'Time Constraints': 6,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Reyena (kids schedule)
+    'Notification Fatigue': 6,  // Ramesh, Aniket, Jessica, Dhruv, Shubham, Reyena (wants minimal)
     'Home Workout Motivation': 3,  // Aniket, Jessica, Dhananjay
     'Chronic Injuries': 3,  // Jessica (knee), Dhananjay (back), Shubham (lower back pain)
-    'Lack of Personalization': 4,  // Ramesh, Majid, Jessica, Dhananjay
-    'AI Trust Issues': 2,  // Dhananjay (prefers human), Dhruv (not specific enough)
+    'Lack of Personalization': 6,  // Ramesh, Majid, Jessica, Dhananjay, Praneeth (apps too mechanical), Reyena
+    'AI Trust Issues': 3,  // Dhananjay (prefers human), Dhruv (not specific enough), Reyena (prefers human touch)
     'Bad Sleep': 1,  // Dhruv
     'Frequent Illness': 1,  // Dhruv
-    'Cravings Management': 1,  // Shubham (sweet cravings)
-    'Hunger Management': 1  // Shubham
+    'Cravings Management': 2,  // Shubham (sweet cravings), Reyena (junk food cravings - PRIMARY challenge)
+    'Hunger Management': 1,  // Shubham
+    'Health Recovery': 1,  // Praneeth (recovering from serious health issues)
+    'Over-tracking Stress': 1,  // Praneeth (micromanagement creates anxiety)
+    'Wearable Health Concerns': 1,  // Praneeth (radiation/laser concerns)
+    'Finding Holistic Solution': 1,  // Praneeth (mental + physical + nutrition in one)
+    'Equipment Availability': 1,  // Reyena (home workout barriers)
+    'Consistency': 1  // Reyena (maintaining routine with daily disruptions)
   },
 
   preferredActivities: {
-    'Gym': 7,  // ALL participants prefer gym
+    'Gym': 7,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham (7 of original participants prefer gym)
     'Group Classes': 2,  // Jessica, Dhananjay (HIIT)
     'Boxing': 1,  // Ramesh
-    'Walking': 1,  // Jessica (Sunday group)
+    'Walking': 3,  // Jessica (Sunday group), Praneeth (morning walks), Reyena (7k steps daily)
     'Cycling': 1,  // Ramesh
     'Hiking': 1,  // Majid
     'Running/Sprinting': 2,  // Majid, Shubham (Sunday sprints)
     'Swimming': 1,  // Dhananjay
     'HIIT Classes': 1,  // Dhananjay
-    'Resistance Training': 1  // Dhruv
+    'Resistance Training': 1,  // Dhruv
+    'Yoga': 3,  // Praneeth (daily), Reyena (did during pregnancy, interested), Jessica
+    'Meditation': 1,  // Praneeth (daily morning practice)
+    'Home Workouts': 1  // Reyena (seeking 30-min follow-along videos)
   },
 
   willingnessToPay: {
     'Very High ($180-240/month)': 1,  // Ramesh
     'Medium-High (with data privacy)': 1,  // Dhananjay (wants free trial first)
-    'Medium ($20-50/month)': 3,  // Majid, Jessica, Shubham
+    'Medium ($20-50/month)': 4,  // Majid, Jessica, Shubham, Praneeth
     'Low-Medium ($60/year)': 1,  // Dhruv
-    'Low ($2.50-4/month)': 1  // Aniket
+    'Low ($2.50-4/month)': 1,  // Aniket
+    'Budget-Conscious': 1  // Reyena (homemaker, looking for value)
   },
 
   socialPreferences: {
-    'Solo': 3,  // Ramesh, Dhruv (strong preference, dislikes distractions), Shubham (loves working alone)
+    'Solo': 5,  // Ramesh, Dhruv (strong preference), Shubham (loves working alone), Praneeth (prefers solo but values human guidance), Reyena (works out alone at home)
     'Partner': 1,  // Aniket
     'Community': 2,  // Majid, Dhananjay (gym classes with familiar faces)
     'Group Classes': 1  // Jessica
   },
 
   painPointFrequency: {
-    'Nutrition tracking difficulty': 6,  // 86% (6/7)
-    'App fragmentation': 2,  // 29% (2/7)
-    'Accuracy concerns': 3,  // 43% (3/7)
-    'Work stress impact': 2,  // 29% (2/7)
-    'Travel disruption': 2,  // 29% (2/7)
-    'Meal prep time': 3,  // 43% (3/7)
-    'Notification fatigue': 5,  // 71% (5/7)
-    'Lack of personalization': 4,  // 57% (4/7)
-    'Chronic injury management': 3,  // 43% (3/7)
-    'AI trust concerns': 2,  // 29% (2/7)
-    'Cravings/hunger management': 1  // 14% (1/7)
+    'Nutrition tracking difficulty': 7,  // 78% (7/9)
+    'App fragmentation': 3,  // 33% (3/9)
+    'Accuracy concerns': 3,  // 33% (3/9)
+    'Work stress impact': 2,  // 22% (2/9)
+    'Travel disruption': 2,  // 22% (2/9)
+    'Meal prep time': 3,  // 33% (3/9)
+    'Notification fatigue': 6,  // 67% (6/9)
+    'Lack of personalization': 6,  // 67% (6/9)
+    'Chronic injury management': 3,  // 33% (3/9)
+    'AI trust concerns': 3,  // 33% (3/9)
+    'Cravings/hunger management': 2,  // 22% (2/9)
+    'Finding holistic solution': 1,  // 11% (1/9) - Praneeth's primary need
+    'Wearable health concerns': 1,  // 11% (1/9) - Praneeth
+    'Time constraints with family': 1  // 11% (1/9) - Reyena (childcare)
   }
 }
 
@@ -114,52 +135,52 @@ const allInsights = [
   {
     id: 'insight-1',
     title: 'Nutrition Tracking is Universal #1 Pain Point',
-    description: '86% of participants (6/7) struggle with nutrition tracking. This is the BIGGEST opportunity. Ramesh: no personalized guidance. Aniket: cannot meet targets when traveling. Majid: needs systematic accountable way. Jessica: meal prep time/energy constraints. Dhruv: diet consistency is hardest challenge. Shubham: CRITICAL need for raw ingredient tracking (not "one bowl" measurements) for accuracy.',
+    description: '78% of participants (7/9) struggle with nutrition tracking. This is the BIGGEST opportunity. Ramesh: no personalized guidance. Aniket: cannot meet targets when traveling. Majid: needs systematic accountable way. Jessica: meal prep time/energy constraints. Dhruv: diet consistency is hardest challenge. Shubham: CRITICAL need for raw ingredient tracking. Reyena: wants calorie tracking to make better food choices. This need spans ALL user types from beginners to advanced.',
     category: 'Critical Pain Point',
     priority: 'Critical',
     impact: 'Very High',
-    affectedUsers: 6,
-    percentage: '86%'
+    affectedUsers: 7,
+    percentage: '78%'
   },
   {
     id: 'insight-2',
     title: 'Extreme Price Sensitivity: 60-96x Range',
-    description: 'Willingness to pay varies dramatically from $2.50/month (Aniket) to $240/month (Ramesh). Dhruv would pay $60/year for integrated solution. Dhananjay wants free trial first with GDPR compliance. Shubham would pay medium range for valuable features. MUST have tiered pricing strategy: Free tier, $5-10, $20-30, $50-100, $150-250.',
+    description: 'Willingness to pay varies dramatically from $2.50/month (Aniket) to $240/month (Ramesh). Dhruv would pay $60/year. Dhananjay wants free trial first with GDPR. Shubham & Praneeth: medium range ($20-50). Reyena: budget-conscious homemaker. MUST have tiered pricing strategy: Free tier, $5-10, $20-30, $50-100, $150-250.',
     category: 'Business Model',
     priority: 'Critical',
     impact: 'Very High',
-    affectedUsers: 7,
+    affectedUsers: 9,
     percentage: '100%'
   },
   {
     id: 'insight-3',
     title: 'Female Users Have Unique Needs',
-    description: 'Jessica (only female) has distinct needs: menstrual cycle awareness, social validation > self-motivation, group classes, meal prep constraints, scale demotivation. 50% of market has these needs.',
+    description: '22% of sample (Jessica, Reyena) are female with distinct needs. Jessica: menstrual cycle awareness, social validation, group classes, meal prep constraints, scale demotivation. Reyena: homemaker schedule flexibility, childcare time constraints, food cravings, home workout preference, menstrual cycle affects energy. 50% of market has these needs.',
     category: 'User Segmentation',
     priority: 'High',
     impact: 'High',
-    affectedUsers: 1,
-    percentage: '14% of sample, 50% of market'
+    affectedUsers: 2,
+    percentage: '22% of sample, 50% of market'
   },
   {
     id: 'insight-4',
     title: 'Social Preferences are Completely Polarized',
-    description: 'Ramesh, Dhruv & Shubham: Solo (hate social features, want ME time, love working alone). Aniket: Partner-focused. Majid & Dhananjay: Community-oriented (gym classes with familiar faces). Jessica: Group classes. Solution: Flexible social settings with private/community toggle.',
+    description: 'Solo preference (56%): Ramesh, Dhruv, Shubham, Praneeth (values human guidance but not social comparison), Reyena (home workouts alone). Partner-focused: Aniket. Community-oriented: Majid, Dhananjay (gym classes). Group classes: Jessica. Solution: Flexible social settings with private/community toggle.',
     category: 'Features',
     priority: 'High',
     impact: 'Very High',
-    affectedUsers: 7,
+    affectedUsers: 9,
     percentage: '100%'
   },
   {
     id: 'insight-5',
-    title: 'Notification Fatigue Affects 71% of Users',
-    description: 'Ramesh: annoying, has internal clock. Aniket: keeps notifications OFF. Jessica: does not engage with app reminders. Dhruv: finds them frustrating, reminds him of failure. Shubham: doesn\'t like notifications, finds them annoying during busy schedules. BUT Dhananjay: notifications helpful for visual confirmation. Solution: Context-aware, flexible time windows, opt-in only.',
+    title: 'Notification Fatigue Affects 67% of Users',
+    description: 'Ramesh: annoying, has internal clock. Aniket: keeps notifications OFF. Jessica: does not engage. Dhruv: frustrating, reminds of failure. Shubham: annoying during busy schedules. Reyena: wants ONLY 1 pre-workout + 1 post-workout notification, continuous = delete app. BUT Dhananjay: notifications helpful for visual confirmation. Solution: Context-aware, minimal frequency, opt-in only.',
     category: 'UX Design',
     priority: 'High',
     impact: 'High',
-    affectedUsers: 5,
-    percentage: '71%'
+    affectedUsers: 6,
+    percentage: '67%'
   },
   {
     id: 'insight-6',
@@ -300,6 +321,96 @@ const allInsights = [
     impact: 'Medium',
     affectedUsers: 3,
     percentage: '43% (tech-savvy users)'
+  },
+  {
+    id: 'insight-20',
+    title: 'Holistic Wellness (Mental + Physical + Nutrition) is Missing Market Need',
+    description: 'Praneeth: "There was not a one point solution. I had to run after a lot of people - for mental wellness, for physical wellness, for dietitians." Current apps fragment the solution. Key realization: "Unless you are mentally fit, physical fitness alone is insufficient." This represents a MAJOR market gap - no app integrates mental health support with fitness and nutrition. Opportunity: First-mover advantage in holistic wellness platform.',
+    category: 'Product Strategy',
+    priority: 'Critical',
+    impact: 'Very High',
+    affectedUsers: 1,
+    percentage: '11% of sample, but represents growing wellness market trend'
+  },
+  {
+    id: 'insight-21',
+    title: 'Wearable Health Concerns: Radiation & Over-tracking Anxiety',
+    description: 'Praneeth: Doctor advised against smartwatches due to laser/radiation health concerns. Also experienced: over-tracking creates unhealthy obsession ("You will actually have over exhausted trying to hit 1000 steps when 800 is enough"). Used Noise and Samsung watches but stopped. Switched to manual journaling which felt "more human" and connected. Some health-conscious users AVOID wearables - must support non-wearable tracking paths.',
+    category: 'User Segmentation',
+    priority: 'High',
+    impact: 'Medium',
+    affectedUsers: 1,
+    percentage: '11% of sample, growing health-conscious segment'
+  },
+  {
+    id: 'insight-22',
+    title: 'Recovery from Health Crisis Requires Adaptive Fitness Plans',
+    description: 'Praneeth: Had to stop intense training due to health crisis (fainting, autoimmune issues, hospital admissions). Sleep issues (1-2hrs → 7hrs took 6-7 months to fix). Body now opposes high-intensity workouts after 5-6 years of static lifestyle. Needs baby-step progression starting from basic cardio. Diet changes frequently with body conditions - plans need REAL-TIME adaptability, not static plans based on height/weight.',
+    category: 'Features',
+    priority: 'High',
+    impact: 'High',
+    affectedUsers: 1,
+    percentage: '11% (recovery users), but critical unmet need'
+  },
+  {
+    id: 'insight-23',
+    title: 'Human Touch > Pure AI: Apps Feel Too Mechanical',
+    description: 'Praneeth tried multiple apps but none stuck because they felt "mechanical and impersonal." Prefers physical trainer who can see him, adjust based on yesterday\'s issues, provide Ayurvedic remedies. Reyena: "AI is okay but human touch would be great. So that I could know 100% genuine." Both want live chat support for doubts during workouts. Solution: Hybrid model with AI recommendations + human coach oversight/chat support.',
+    category: 'Product Design',
+    priority: 'High',
+    impact: 'Very High',
+    affectedUsers: 2,
+    percentage: '22%'
+  },
+  {
+    id: 'insight-24',
+    title: 'Food Cravings are #1 Diet Adherence Barrier for Beginners',
+    description: 'Reyena: "I\'m kind of a foodie. Even if I try to eat healthy, I crave junk. So I end up cheating." Main challenge is not knowledge or time - it\'s CRAVINGS. Wants healthier alternatives to satisfy cravings. "If there are two things and less calories, I would opt for the second option." Opportunity: AI-powered craving substitution recommendations (e.g., if craving chips, suggest baked alternatives with similar taste/texture but lower calories).',
+    category: 'Features',
+    priority: 'High',
+    impact: 'High',
+    affectedUsers: 2,
+    percentage: '22% (Reyena, Shubham sweet cravings)'
+  },
+  {
+    id: 'insight-25',
+    title: 'Homemakers Need Time-Efficient Home Workout Solutions',
+    description: 'Reyena (30, homemaker, 2 kids): Free in mornings/evenings but tied to kids\' playtime. Does 7k steps on terrace while supervising kids. Wants 30-minute follow-along workout videos (not short clips). Prefers 3 days/week frequency. Equipment is a barrier - needs upfront list. No gym access due to childcare. Opportunity: Homemaker-optimized fitness (minimal equipment, kid-friendly timing, home-based).',
+    category: 'Market Opportunity',
+    priority: 'High',
+    impact: 'High',
+    affectedUsers: 1,
+    percentage: '11% of sample, represents significant homemaker market segment'
+  },
+  {
+    id: 'insight-26',
+    title: 'Live Chat Support Builds Trust for Non-Power Users',
+    description: 'Reyena: "If we could chat with somebody, we could just drop them a text... it would be great." Wants live support for posture doubts during workouts, nutrition questions. Praneeth values human guidance over pure AI. This is different from power users (Ramesh, Dhruv) who prefer autonomous control. Beginner/intermediate users need safety net of human expert availability.',
+    category: 'Features',
+    priority: 'High',
+    impact: 'Medium',
+    affectedUsers: 2,
+    percentage: '22% (beginner/intermediate segment)'
+  },
+  {
+    id: 'insight-27',
+    title: 'Regional Food Awareness Essential for Practical Diet Plans',
+    description: 'Praneeth (Kerala): Trainer asked "In Kerala, you get this thing?" and adapted diet to local ingredients. Staple food is rice. Reyena (Pune): Uses step tracking app but wants precise measurements - "In Indian households, one cup means different measurements." Generic Western-centric meal plans don\'t work. Need regional Indian food database with accurate portions and local ingredient availability.',
+    category: 'Product Design',
+    priority: 'High',
+    impact: 'Medium',
+    affectedUsers: 2,
+    percentage: '22%, critical for Indian market penetration'
+  },
+  {
+    id: 'insight-28',
+    title: 'Self-Progress Comparison > Social Leaderboards for Most Users',
+    description: 'Reyena: "I would go for myself. I\'ll get to know what I have improved or maybe demotivated." Prefers weekly self-comparison over competing with others. Praneeth: "Comparing with a different individual doesn\'t make sense. Different body structures, different situations." Social comparison demotivates. Both want to see their own progress trends. Only community-oriented users (Majid, Dhananjay, Jessica) appreciate social features.',
+    category: 'UX Design',
+    priority: 'High',
+    impact: 'High',
+    affectedUsers: 7,
+    percentage: '78% prefer self-comparison over social comparison'
   }
 ]
 
@@ -616,7 +727,7 @@ export const userPersonas = {
     description: 'Elite fitness enthusiasts and trainers with deep expertise. Highly disciplined, workout 5-6+ days/week. Need advanced features, precision tracking, and client management tools. Value integration over fragmentation. Solo-focused, dislike social features. Tech-savvy AI power users.',
     representatives: ['Ramesh (Advanced)', 'Dhruv (Trainer)', 'Shubham (Coach)'],
     count: 3,
-    percentage: '43% of sample',
+    percentage: '33% of sample',
     keyNeeds: [
       'ONE integrated platform (replace 5+ apps)',
       'Raw ingredient nutrition tracking',
@@ -646,7 +757,7 @@ export const userPersonas = {
     description: 'Regular gym-goers working out 3-4 days/week. Mix of social preferences (partner, community, solo). Pursuing fitness education or specific body composition goals. Value accountability, learning, and personalized plans. Medium tech adoption.',
     representatives: ['Aniket (Business Traveler)', 'Majid (Educated Learner)'],
     count: 2,
-    percentage: '29% of sample',
+    percentage: '22% of sample',
     keyNeeds: [
       'Nutrition tracking with accountability',
       'Travel-friendly workout options',
@@ -670,40 +781,44 @@ export const userPersonas = {
     motivationDrivers: ['Partner motivation', 'Gym environment', 'Personal progress', 'Trainer guidance', 'Community accountability']
   },
 
-  'Busy Professionals (Female-focused)': {
-    description: 'Working professionals (primarily female, 30s-40s) balancing demanding careers with fitness. Prefer group classes and social validation. Need work-life balance support. Unique needs: menstrual cycle awareness, meal prep constraints, injury management. Value convenience and affordability.',
-    representatives: ['Jessica (Teacher, Group Classes)'],
-    count: 1,
-    percentage: '14% of sample, represents 50% of total market (female segment)',
+  'Busy Women (Professionals & Homemakers)': {
+    description: 'Women (30s-40s) balancing demanding careers or childcare with fitness. Prefer group classes/home workouts depending on schedule flexibility. Need work-life balance support or kid-friendly timing. Unique needs: menstrual cycle awareness, meal prep constraints, food cravings management, injury management. Value convenience and affordability.',
+    representatives: ['Jessica (Teacher, Group Classes)', 'Reyena (Homemaker, Home Workouts)'],
+    count: 2,
+    percentage: '22% of sample, represents 50% of total market (female segment)',
     keyNeeds: [
       'Menstrual cycle-aware workout/diet plans',
       'Meal prep solutions for busy schedules',
-      'Group class integration',
-      'Social validation features',
+      'Group class integration OR home workout videos (30-min follow-along)',
+      'Social validation features OR self-progress tracking',
       'Injury-adaptive workouts',
       'Dietary restriction support (pescatarian, etc.)',
-      'Work stress integration',
-      'Affordable pricing'
+      'Work stress integration OR childcare time flexibility',
+      'Affordable pricing',
+      'Craving substitution recommendations',
+      'Equipment-minimal home workouts'
     ],
-    willingnessToPay: 'Medium (affordable, stopped PT due to cost)',
-    techAdoption: 'Medium-High (Apple Watch user, but no AI interaction)',
-    fitnessLevel: 'Medium (3-4 days/week group classes)',
+    willingnessToPay: 'Low-Medium (affordable, budget-conscious)',
+    techAdoption: 'Medium (Apple Watch user, step tracking apps, prefers human touch over pure AI)',
+    fitnessLevel: 'Beginner to Medium (7k steps daily OR 3-4 days/week group classes)',
     challenges: [
-      'Work stress derails routine',
-      'Meal prep time/energy after work',
-      'Food waste (lives alone)',
+      'Work stress OR childcare schedule derails routine',
+      'Meal prep time/energy constraints',
+      'Food cravings (#1 diet adherence barrier)',
       'Scale demotivation',
-      'Knee injury history',
-      'Limited meal service options for dietary needs'
+      'Chronic injuries OR menstrual cycle energy fluctuations',
+      'Time constraints with family/work',
+      'Equipment availability',
+      'Consistency challenges'
     ],
-    motivationDrivers: ['Group classes', 'Social feedback', 'External validation', 'Work-life balance', 'Stress management']
+    motivationDrivers: ['Group classes OR solo home workouts', 'Social feedback AND self-progress', 'External validation', 'Work-life balance OR family schedule', 'Stress management', 'Weight loss goals']
   },
 
   'Health-Conscious Experienced Professionals': {
     description: 'Mature professionals (40s-50s+) focused on health maintenance and preventing degeneration. NOT performance-focused. Value community but cautious about AI. Need human oversight, GDPR compliance, injury management. Prefer incremental changes over complete overhauls.',
     representatives: ['Dr. Dhananjay Kumar (40s-50s, Airbus)'],
     count: 1,
-    percentage: '14% of sample, represents older demographic & European market',
+    percentage: '11% of sample, represents older demographic & European market',
     keyNeeds: [
       'Chronic injury management (back pain)',
       'Small incremental diet changes (NOT complete overhaul)',
@@ -726,5 +841,39 @@ export const userPersonas = {
       'Previous burnout from work travel'
     ],
     motivationDrivers: ['Feeling good after workout', 'Preventing degeneration', 'Gym community', 'Seeing fit peers', 'Historical progress data', 'NOT competition']
+  },
+
+  'Holistic Wellness Seekers (Recovery & Mental Health Focus)': {
+    description: 'Tech-savvy professionals (late 20s-30s) recovering from health crises or focused on holistic wellness. Previously advanced users now prioritizing mental health as foundation for physical fitness. Anti-over-tracking, value human touch despite tech proficiency. Seek ONE integrated solution for mental + physical + nutritional health. Prefer manual journaling over wearables. Need adaptive plans that respond to changing body conditions.',
+    representatives: ['Praneeth (UX Strategist, Holistic Wellness)'],
+    count: 1,
+    percentage: '11% of sample, represents growing wellness-first market segment',
+    keyNeeds: [
+      'Holistic integration: Mental health + Physical fitness + Nutrition in ONE app',
+      'Adaptive plans for changing body conditions (not static height/weight plans)',
+      'Human touch + live chat support (despite being tech-savvy)',
+      'Non-wearable tracking options (health/radiation concerns)',
+      'Positive solution-focused messaging (not problem/fear-based)',
+      'Regional food awareness (Kerala staples, etc.)',
+      'Anti-over-tracking features (avoid micromanagement anxiety)',
+      'Recovery-focused gradual progression (baby steps from basics)',
+      'Ayurvedic/traditional wisdom integration',
+      'Self-progress comparison (NO social leaderboards)',
+      'Manual journaling option ("more human" feeling)'
+    ],
+    willingnessToPay: 'Medium ($20-50/month for right holistic solution)',
+    techAdoption: 'Very High (UX professional, ChatGPT user) BUT prefers human guidance',
+    fitnessLevel: 'Low-Intermediate (yoga, meditation, walking, light jogging - recovery mode)',
+    challenges: [
+      'Finding ONE holistic solution (had to run after multiple people)',
+      'Apps feel mechanical and impersonal (tried many, none stuck)',
+      'Body adaptation after health crisis and long break',
+      'Over-tracking creates unhealthy stress',
+      'Wearable health concerns (radiation/laser from smartwatches)',
+      'Frequent diet changes as body conditions fluctuate',
+      'Sleep recovery (1-2hrs → 7hrs took 6-7 months)',
+      'Mental wellness is foundation - physical alone insufficient'
+    ],
+    motivationDrivers: ['Mental peace', 'Holistic health', 'Recovery from crisis', 'Human connection', 'Natural/traditional approaches', 'Self-improvement without stress', 'Avoiding past health problems']
   }
 }

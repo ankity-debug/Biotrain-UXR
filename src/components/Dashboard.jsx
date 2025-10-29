@@ -107,7 +107,7 @@ const Dashboard = () => {
         <AlertCircle className="h-4 w-4" style={{ color: COLORS.chart4 }} />
         <AlertTitle>Critical Finding</AlertTitle>
         <AlertDescription>
-          <strong>86% of participants (6/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
+          <strong>78% of participants (7/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
         </AlertDescription>
       </Alert>
 
@@ -262,7 +262,7 @@ const Dashboard = () => {
         <CardFooter>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <AlertCircle className="h-4 w-4" />
-            <span>Nutrition tracking affects 86% of users - highest priority opportunity</span>
+            <span>Nutrition tracking affects 78% of users - highest priority opportunity</span>
           </div>
         </CardFooter>
       </Card>
@@ -610,7 +610,7 @@ const Dashboard = () => {
         <CheckCircle2 className="h-4 w-4" style={{ color: COLORS.chart5 }} />
         <AlertTitle>Dashboard Updated</AlertTitle>
         <AlertDescription>
-          All data reflects real interviews from {analyticsData.totalParticipants} participants: Ramesh, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, and Shubham.
+          All data reflects real interviews from {analyticsData.totalParticipants} participants: Ramesh, Aniket, Majid, Jessica, Dr. Dhananjay Kumar, Dhruv, Shubham, Praneeth, and Reyena.
         </AlertDescription>
       </Alert>
     </div>
