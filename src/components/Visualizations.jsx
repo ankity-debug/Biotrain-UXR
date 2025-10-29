@@ -368,9 +368,9 @@ const Visualizations = () => {
           {/* Persona Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(userPersonas).map(([name, data], index) => {
-              const icons = [Zap, Target, Heart, Brain]
-              const colors = [COLORS.chart1, COLORS.chart2, COLORS.chart3, COLORS.chart4]
-              const Icon = icons[index]
+              const icons = [Zap, Target, Heart, Brain, TrendingUp]
+              const colors = [COLORS.chart1, COLORS.chart2, COLORS.chart3, COLORS.chart4, COLORS.chart5]
+              const Icon = icons[index] || Zap
               return (
                 <Card key={name} className="hover:shadow-lg transition-all">
                   <CardHeader>
@@ -441,11 +441,23 @@ const Visualizations = () => {
                         <ul className="text-sm space-y-1 text-muted-foreground">
                           <li className="flex items-start gap-2">
                             <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: colors[index] }} />
-                            <span>Health-focused, experienced</span>
+                            <span>Health-focused, 40s-50s+ demographic</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: colors[index] }} />
-                            <span>Premium tier: $180-240/month</span>
+                            <span>GDPR compliance & human oversight</span>
+                          </li>
+                        </ul>
+                      )}
+                      {index === 4 && (
+                        <ul className="text-sm space-y-1 text-muted-foreground">
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: colors[index] }} />
+                            <span>Mental + Physical + Nutrition integration</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: colors[index] }} />
+                            <span>Recovery-focused, anti-over-tracking</span>
                           </li>
                         </ul>
                       )}

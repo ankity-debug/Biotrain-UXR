@@ -59,10 +59,10 @@ const Dashboard = () => {
 
   // 5. BUDGET/PRICING - Simplified categories
   const budgetSimplified = [
-    { name: 'Free', value: analyticsData.budgets['Would pay $0 (free only)'] || 0 },
-    { name: 'Low ($2-5)', value: (analyticsData.budgets['Low ($2.50-10/month)'] || 0) },
-    { name: 'Medium ($20-50)', value: (analyticsData.budgets['Medium ($20-50/month)'] || 0) + (analyticsData.budgets['Medium ($60/year = $5/month)'] || 0) },
-    { name: 'High ($100+)', value: (analyticsData.budgets['High ($100-250/month - Elite tier)'] || 0) + (analyticsData.budgets['Premium (AED 180-240/month)'] || 0) }
+    { name: 'Free', value: 0 }, // No free-only users in current data
+    { name: 'Low ($2-5)', value: (analyticsData.budgets['Medium-Low ($2.50-4/month)'] || 0) + (analyticsData.budgets['Budget-Conscious'] || 0) },
+    { name: 'Medium ($20-50)', value: (analyticsData.budgets['Medium'] || 0) + (analyticsData.budgets['Low-Medium ($60/year)'] || 0) },
+    { name: 'High ($100+)', value: (analyticsData.budgets['Very High ($180-240/month)'] || 0) + (analyticsData.budgets['Medium-High'] || 0) }
   ].map((item, index) => ({
     ...item,
     color: [COLORS.chart5, COLORS.chart2, COLORS.chart1, COLORS.chart4][index]

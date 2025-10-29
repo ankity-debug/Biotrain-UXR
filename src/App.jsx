@@ -10,12 +10,12 @@ function App() {
   const [activeTab, setActiveTab] = useState('dashboard')
 
   const tabs = [
-    { id: 'executive-summary', label: 'Executive Summary', icon: '📑' },
     { id: 'dashboard', label: 'Dashboard', icon: '📊' },
+    { id: 'executive-summary', label: 'Executive Summary', icon: '📑' },
     { id: 'visualizations', label: 'Dive Deep (Graphs)', icon: '📈' },
     { id: 'participants', label: 'Participants & Q&A', icon: '👥' },
     { id: 'insights', label: 'Insights', icon: '💡' },
-    { id: 'priority-matrix', label: 'Priority Matrix', icon: '🎯' }
+    { id: 'priority-matrix', label: 'Feature Priority', icon: '🎯' }
   ]
 
   return (
