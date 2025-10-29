@@ -1,11 +1,11 @@
 // Real interview data from actual user research
-import { rameshProfile, rameshInterview } from './interview1_ramesh.js'
-import { aniketProfile, aniketInterview } from './interview2_aniket.js'
-import { majidProfile, majidInterview } from './interview3_majid.js'
-import { jessicaProfile, jessicaInterview } from './interview4_jessica.js'
-import { dhananjayProfile, dhananjayInterview } from './interview5_dhananjay.js'
-import { dhruvProfile, dhruvInterview } from './interview6_dhruv.js'
-import { shubhamProfile, shubhamInterview } from './interview7_shubham.js'
+import { rameshProfile, rameshInterview } from './interviews/interview1_ramesh.js'
+import { aniketProfile, aniketInterview } from './interviews/interview2_aniket.js'
+import { majidProfile, majidInterview } from './interviews/interview3_majid.js'
+import { jessicaProfile, jessicaInterview } from './interviews/interview4_jessica.js'
+import { dhananjayProfile, dhananjayInterview } from './interviews/interview5_dhananjay.js'
+import { dhruvProfile, dhruvInterview } from './interviews/interview6_dhruv.js'
+import { shubhamProfile, shubhamInterview } from './interviews/interview7_shubham.js'
 
 // Export all participant data
 export const participants = [
