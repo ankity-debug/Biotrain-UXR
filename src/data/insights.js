@@ -1,40 +1,44 @@
-// Analytics and insights from 9 real user interviews
+// Analytics and insights from 11 real user interviews
 
 export const analyticsData = {
-  totalParticipants: 9,
+  totalParticipants: 11,
 
   userTypes: {
-    'Advanced': 2,  // Ramesh, Praneeth (recovering from advanced)
+    'Advanced': 3,  // Ramesh, Praneeth (recovering from advanced), Mobahila (5-6 days/week since 2017)
     'Intermediate': 4,  // Aniket, Majid, Jessica, Dhananjay
     'Power User': 2,  // Dhruv (fitness professional), Shubham (trainer/coach)
-    'Beginner': 1  // Reyena
+    'Beginner': 1,  // Reyena
+    'Lapsed': 1  // Maulik (was advanced in Singapore, now sedentary)
   },
 
   gender: {
-    'Male': 7,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham, Praneeth
-    'Female': 2  // Jessica, Reyena
+    'Male': 8,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham, Praneeth, Maulik
+    'Female': 3  // Jessica, Reyena, Mobahila
   },
 
   fitnessLevels: {
-    'Very High': 2,  // Dhruv (8-15 workouts/month, professional), Shubham (6 days, 25-30 sets, trainer)
+    'Very High': 3,  // Dhruv (8-15 workouts/month, professional), Shubham (6 days, 25-30 sets, trainer), Mobahila (5-6 days, weight training, athletic history)
     'High': 1,  // Ramesh (6 days, 2hrs)
     'Medium': 4,  // Aniket (4 days), Majid (3-4 days), Jessica (3-4 days), Dhananjay (2-3 days + swimming)
     'Low': 1,  // Praneeth (yoga, meditation, light cardio - recovery mode)
-    'Beginner': 1  // Reyena (7k steps daily, no structured routine)
+    'Beginner': 1,  // Reyena (7k steps daily, no structured routine)
+    'Sedentary': 1  // Maulik (300-400 steps/day, was advanced in past)
   },
 
   budgets: {
     'Very High ($180-240/month)': 1,  // Ramesh
     'Medium-High': 1,  // Dhananjay (with GDPR privacy requirements)
+    'Medium ($70-150/year)': 1,  // Mobahila ($9k PKR annual for Just Stretch)
     'Medium': 4,  // Majid, Jessica, Shubham (would pay for value), Praneeth
     'Low-Medium ($60/year)': 1,  // Dhruv
     'Medium-Low ($2.50-4/month)': 1,  // Aniket
-    'Low': 1  // Reyena (budget-conscious homemaker)
+    'Low': 1,  // Reyena (budget-conscious homemaker)
+    'Not Currently Paying': 1  // Maulik (not fitness-focused currently)
   },
 
   techAdoption: {
-    'Very High': 4,  // Ramesh (ChatGPT power user), Dhruv (5+ apps, Whoop, understands HRV), Shubham (ChatGPT, smart ring), Praneeth (UX strategist, ChatGPT user)
-    'Medium-High': 2,  // Aniket, Jessica (Apple Watch)
+    'Very High': 5,  // Ramesh (ChatGPT power user), Dhruv (5+ apps, Whoop, understands HRV), Shubham (ChatGPT, smart ring), Praneeth (UX strategist, ChatGPT user), Maulik (IT professional, skeptical of AI)
+    'Medium-High': 3,  // Aniket, Jessica (Apple Watch), Mobahila (uses apps, prefers algorithm over AI)
     'Medium': 3  // Majid, Dhananjay (Fitbit, cautious about AI), Reyena (uses step tracker app)
   },
 
@@ -53,47 +57,64 @@ export const analyticsData = {
     'Mental Wellness': 1,  // Praneeth (primary focus)
     'Holistic Health': 1,  // Praneeth (mental + physical + nutritional)
     'Recovery': 1,  // Praneeth (from health crisis)
-    'Consistency': 1  // Reyena (building sustainable routine)
+    'Consistency': 2,  // Reyena (building sustainable routine), Mobahila (5-6 days/week since 2017)
+    'Stay Young & Healthy': 1,  // Mobahila (primary motivation post-30)
+    'Prevent PCOS': 1,  // Mobahila (specific health goal)
+    'Regain Motivation': 1,  // Maulik (lost after moving from Singapore)
+    'No Current Goals': 1  // Maulik (achieved 115→70kg in past, now inactive)
   },
 
   commonChallenges: {
-    'Nutrition Tracking': 7,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Shubham, Reyena (calorie tracking)
+    'Nutrition Tracking': 8,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Shubham, Reyena (calorie tracking), Maulik (Indian food portions)
+    'Indian Food Tracking': 1,  // Maulik (dal, roti, sabzi impossible to log accurately)
     'App Fragmentation': 3,  // Ramesh, Dhruv (5+ apps each), Praneeth (tried many, none stuck)
     'Work Stress': 2,  // Majid (9-10hr), Jessica (teaching)
     'Travel Disruption': 2,  // Ramesh, Aniket
     'Meal Prep Time': 3,  // Ramesh, Jessica, Shubham
     'Time Constraints': 6,  // Ramesh, Aniket, Majid, Jessica, Dhruv, Reyena (kids schedule)
-    'Notification Fatigue': 6,  // Ramesh, Aniket, Jessica, Dhruv, Shubham, Reyena (wants minimal)
-    'Home Workout Motivation': 3,  // Aniket, Jessica, Dhananjay
-    'Chronic Injuries': 3,  // Jessica (knee), Dhananjay (back), Shubham (lower back pain)
-    'Lack of Personalization': 6,  // Ramesh, Majid, Jessica, Dhananjay, Praneeth (apps too mechanical), Reyena
-    'AI Trust Issues': 3,  // Dhananjay (prefers human), Dhruv (not specific enough), Reyena (prefers human touch)
+    'Notification Fatigue': 7,  // Ramesh, Aniket, Jessica, Dhruv, Shubham, Reyena (wants minimal), Maulik (guilt-inducing)
+    'Home Workout Motivation': 4,  // Aniket, Jessica, Dhananjay, Maulik (bought equipment, never used)
+    'Chronic Injuries': 4,  // Jessica (knee), Dhananjay (back), Shubham (lower back pain), Maulik (slipped disc L4-L5)
+    'Lack of Personalization': 7,  // Ramesh, Majid, Jessica, Dhananjay, Praneeth (apps too mechanical), Reyena, Maulik
+    'AI Trust Issues': 5,  // Dhananjay (prefers human), Dhruv (not specific enough), Reyena (prefers human touch), Maulik (IT professional, knows AI limitations), Mobahila (absolute rejection)
+    'Privacy Concerns': 2,  // Maulik (data used for training), Mobahila (won't share medical reports)
     'Bad Sleep': 1,  // Dhruv
     'Frequent Illness': 1,  // Dhruv
     'Cravings Management': 2,  // Shubham (sweet cravings), Reyena (junk food cravings - PRIMARY challenge)
     'Hunger Management': 1,  // Shubham
     'Health Recovery': 1,  // Praneeth (recovering from serious health issues)
-    'Over-tracking Stress': 1,  // Praneeth (micromanagement creates anxiety)
+    'Over-tracking Stress': 2,  // Praneeth (micromanagement creates anxiety), Mobahila (sleep tracking "scared me")
     'Wearable Health Concerns': 1,  // Praneeth (radiation/laser concerns)
     'Finding Holistic Solution': 1,  // Praneeth (mental + physical + nutrition in one)
-    'Equipment Availability': 1,  // Reyena (home workout barriers)
-    'Consistency': 1  // Reyena (maintaining routine with daily disruptions)
+    'Equipment Availability': 2,  // Reyena (home workout barriers), Mobahila (home lacks heavy machines)
+    'Consistency': 1,  // Reyena (maintaining routine with daily disruptions)
+    'Cultural Motivation Loss': 1,  // Maulik (Singapore → India shift killed motivation)
+    'Social Eating Challenges': 1,  // Mobahila (conferences, meetings, social settings)
+    'Recovery Tips Undervalued': 1,  // Mobahila ("recovery as important as training")
+    'Freemium Model Dislike': 1,  // Maulik (wants clear free vs paid)
+    'Product Naming Concerns': 2  // Maulik ("BioTrain" scary), Mobahila ("BioTrain" irrelevant)
   },
 
   preferredActivities: {
     'Gym': 7,  // Ramesh, Aniket, Majid, Dhananjay, Dhruv, Shubham (7 of original participants prefer gym)
+    'Weight Training': 1,  // Mobahila (primary activity, 1-1.5hrs, 2 muscles/day)
     'Group Classes': 2,  // Jessica, Dhananjay (HIIT)
     'Boxing': 1,  // Ramesh
     'Walking': 3,  // Jessica (Sunday group), Praneeth (morning walks), Reyena (7k steps daily)
-    'Cycling': 1,  // Ramesh
-    'Hiking': 1,  // Majid
-    'Running/Sprinting': 2,  // Majid, Shubham (Sunday sprints)
+    'Cycling': 2,  // Ramesh, Mobahila (marathons)
+    'Hiking': 2,  // Majid, Mobahila (Margalla Hills, weekends)
+    'Running/Sprinting': 3,  // Majid, Shubham (Sunday sprints), Mobahila (marathons)
     'Swimming': 1,  // Dhananjay
     'HIIT Classes': 1,  // Dhananjay
     'Resistance Training': 1,  // Dhruv
-    'Yoga': 3,  // Praneeth (daily), Reyena (did during pregnancy, interested), Jessica
+    'Yoga': 4,  // Praneeth (daily), Reyena (did during pregnancy, interested), Jessica, Mobahila (outdoor yoga, sunbathing)
     'Meditation': 1,  // Praneeth (daily morning practice)
-    'Home Workouts': 1  // Reyena (seeking 30-min follow-along videos)
+    'Home Workouts': 2,  // Reyena (seeking 30-min follow-along videos), Mobahila (light weights, stretching, yoga)
+    'Pilates': 1,  // Mobahila
+    'Aerobics': 1,  // Mobahila
+    'Sauna/Steam': 1,  // Mobahila (post-workout recovery)
+    'Stretching': 1,  // Mobahila (Just Stretch app, 5x/week)
+    'None (Currently Inactive)': 1  // Maulik (sedentary, was advanced in Singapore)
   },
 
   willingnessToPay: {

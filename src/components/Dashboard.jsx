@@ -106,9 +106,9 @@ const Dashboard = () => {
       <Alert className="border-l-4" style={{ borderLeftColor: COLORS.chart4 }}>
         <AlertCircle className="h-4 w-4" style={{ color: COLORS.chart4 }} />
         <AlertTitle>Critical Finding</AlertTitle>
-        <AlertDescription>
-          <strong>78% of participants (7/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
-        </AlertDescription>
+            <AlertDescription>
+              <strong>73% of participants (8/{analyticsData.totalParticipants})</strong> struggle with nutrition tracking - the #1 pain point across all user types
+            </AlertDescription>
       </Alert>
 
       {/* Key Stats Cards */}
